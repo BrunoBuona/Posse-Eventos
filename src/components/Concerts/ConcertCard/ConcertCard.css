@@ -1,0 +1,14 @@
+.Concert-card-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+.Concert-card-imageContainer {
+  overflow: hidden;
+  width: 100%;
+  height: 230px;
+}
+.Concert-card:hover .Concert-card-image {
+  transform: scale(1.1);
+}

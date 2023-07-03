@@ -1,0 +1,23 @@
+.background {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .7);
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: color;
+    background-position: center;
+}
+
+.circles{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 2em;
+    height: 100%;
+    gap: 1em;
+}
+
+.circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}

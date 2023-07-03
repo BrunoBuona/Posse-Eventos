@@ -1,0 +1,39 @@
+.card{
+    border: none;
+}
+.artist__card:hover{
+    cursor: pointer;
+}
+.artist__card:active{
+    transition: 50ms;
+    transform: translate3d(2px, 2px, 2px);
+}
+.image__container{
+    padding: 1rem;
+    position: relative;
+}
+
+.card__text{
+    position: absolute;
+    font-size: 2rem;
+    color: var(--main-color);
+    text-shadow: 1px 0px 0px rgba(0,0,0,1);
+    font-weight: 600;
+    transition: 50ms;
+    z-index: 1;
+}
+
+.hidden{
+    z-index: -1;
+}
+.card__image{
+    height: 250px;
+    width: 100%;
+    border-radius: 50%;
+    border: solid var(--main-color);
+    object-fit: cover;
+}
+.opacity{
+    transition: 1s;
+    opacity: .4;
+}

@@ -1,0 +1,163 @@
+.formSign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1em;
+}
+
+.social-networks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.right {
+    background-image: url('../../../../public/assets/img/backSign.jpg');
+    background-color: rgba(0, 0, 0, .5);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: color;
+    width: 70%;
+}
+
+.right-content-title {
+    background-color: rgba(0, 0, 0, .4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    gap: .5em;
+    height: 100%;
+}
+
+.form-shadows-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-title-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.title2Sign {
+    font-size: 4rem;
+    color: black;
+    font-weight: bold;
+}
+
+.submit2Sign {
+    width: 200px;
+    font-size: 1rem;
+    height: 3em;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+}
+
+.submit2Sign:hover {
+    background-color: rgb(0, 0, 0, .9);
+    transform: scale(1.1);
+    color: white;
+}
+
+.submit2SignUp {
+    width: 200px;
+    font-size: 1rem;
+    height: 3em;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: white;
+    border: none;
+}
+
+.submit2SignUp:hover {
+    transform: scale(1.1);
+}
+
+.inputGroup {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 100%;
+    position: relative;
+}
+
+.inputGroup input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: white
+}
+
+.inputGroup :is(input:focus, input:valid) {
+    border-color: rgb(150, 150, 200);
+}
+
+.inputGroup-active label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: white
+}
+
+.bar{
+    width: 200px;
+}
+
+
+@media screen and (max-width: 990px) {
+    .container-login{
+        flex-direction: column;
+    }
+    .right{
+        width: 100%;
+    }
+    .right-content-title{
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    .bar{
+        width: 80px;
+    }
+}

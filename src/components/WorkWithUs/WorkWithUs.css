@@ -1,0 +1,156 @@
+.wwu-general-container{
+    min-height: 115vh;
+    height: auto;
+    background-color:rgb(6, 0, 8);
+}
+.wwu-background-presentation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 45vh;
+    width: 100%;
+    background-image: url(https://prism.fm/wp-content/uploads/2022/03/concert-staff-1024x688.jpg);
+    background-position: 50% 31%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.presentation-h2{
+    font-size: 62px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 0;
+    text-shadow: 3px 3px 3px var(--main-color);
+}
+.ww-our-presentation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh;
+    width: 100%;
+    background-color: rgb(10, 0, 15);
+}
+.ww-images-state-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+.image-container-state{
+    width: 100%;
+    height: 100%;
+    filter: blur(2.1px) grayscale(100%);
+    display: flex;
+    transition: all 0.3s linear;
+}
+.image-container-state-selected{
+    filter: blur(0) grayscale(0);
+}
+.staff-images-state{
+    border: 1px solid black;
+    width: 125px;
+    gap: 5px;
+    height: 150px;
+    object-fit: cover;
+}
+.wwu-our-h2{
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.wwu-job-offers{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 45vh;
+    width: 100%;
+    background-color: rgb(10, 0, 15);
+}
+.ww-job-h2{
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-bottom: 20px;
+}
+.ww-job-span{
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(233, 233, 233);
+    text-align: center;
+    padding-bottom: 20px;
+    text-shadow: 1px 2px 3px var(--main-color);
+}
+.ww-job-offer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 200px;
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border: 1px solid rgb(0, 0, 0);
+}
+.ww-job-offer-h3{
+    padding-top: 25px;
+}
+.ww-job-offer-button{
+    width: 100%;
+    height: 40px;
+    margin-top: auto;
+    background-color: var(--main-color);
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.ww-job-offers-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.applied{
+    background-color: rgba(92, 92, 92, 0.589);
+    color: rgb(0, 0, 0);
+}
+.staff-description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 720px;
+    height: 100%;
+    background-color: rgb(10, 0, 15);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+.wwu-social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width: 720px){
+    .ww-our-presentation{
+        display: none;
+    }
+}
