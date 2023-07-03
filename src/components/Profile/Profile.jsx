@@ -131,17 +131,6 @@ export default function Profile() {
                                     <div className="Profile-Block1-Script">
                                     </div>
                                 </div>
-                                <div className="Profile-social-icons">
-                                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
-                                        <SocialIcon className="icon-social" network="facebook" bgColor="blue" fgColor="white" style={{ height: 25, width: 25 }} />
-                                    </a>
-                                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-                                        <SocialIcon className="icon-social" network="instagram" bgColor="pink" fgColor="black" style={{ height: 25, width: 25 }} />
-                                    </a >
-                                    <a href="https://www.twitter.com/" target="_blank" rel="noreferrer">
-                                        <SocialIcon className="icon-social" network="twitter" bgColor="#00DBDE" fgColor="white" style={{ height: 25, width: 25 }} />
-                                    </a>
-                                </div>
                             </div>
                         </div>
                         <div className="Profile-Block-Container-2">
