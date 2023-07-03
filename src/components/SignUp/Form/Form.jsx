@@ -8,11 +8,9 @@ import { useTranslation } from "react-i18next";
 
 export default function Form() {
     const navigate = useNavigate()
-
     const nameRef = useRef()
     const lastNameRef = useRef()
     const photoRef = useRef()
-    const ageRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
     const formRef = useRef()
