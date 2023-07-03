@@ -22,7 +22,7 @@ function Footer() {
                 </div>
 
                 <div>
-                    <h4 className="footer-text">© 2023 TuMarca. Todos los derechos reservados.</h4>
+                    <h4 className="footer-text">© 2023 POSSE. Todos los derechos reservados.</h4>
                 </div>
         </footer>
     )
