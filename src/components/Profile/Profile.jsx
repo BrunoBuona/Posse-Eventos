@@ -129,30 +129,6 @@ export default function Profile() {
                                         <img className="Profile-Photo" src="https://cdn.landesa.org/wp-content/uploads/default-user-image.png" alt={user.name} />
                                     </div>
                                     <div className="Profile-Block1-Script">
-                                        <label htmlFor="file-upload" className="custom-file-upload">
-                                            BROWSE
-                                        </label>
-                                        <input id="file-upload" type="file" onChange={async (e) => {
-                                            let formData = new FormData()
-                                            formData.append("image", e.target.files[0])
-                                            let image = await axios.post("https://api.imgbb.com/1/upload?key=b7043b88e74bdbf309d075604db718f8", formData)
-
-                                            let data = {
-                                                data: { photo: image.data.data.display_url },
-                                                userId,
-                                            }
-
-                                            let update = await dispatch(updateUser(data)).unwrap()  
-                                            setPhotoState(update.response.photo)
-
-                                            Swal.fire({
-                                                title: t("photo_updated"),
-                                                icon: 'success',
-                                                confirmButtonText: 'OK'
-                                            })
-                                            setReload(!reload)
-
-                                        }} />
                                     </div>
                                 </div>
                                 <div className="Profile-social-icons">
