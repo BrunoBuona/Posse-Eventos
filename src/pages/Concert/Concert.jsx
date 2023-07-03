@@ -103,7 +103,7 @@ export default function Concert() {
                 ))}
               </div>
               <Button className="mt-2" variant="outline-danger" onClick={() => navigate("/concerts")}>
-                Go back to Concerts
+                Volver a Eventos
               </Button>
             </div>
           </div>
