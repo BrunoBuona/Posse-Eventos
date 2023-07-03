@@ -60,7 +60,7 @@ const onSearch = e => {
             ))}
           </Row>
         ) : (
-          <h2 className="text-center text-main">{message}</h2>
+          <h2 className="text-center text-main">No se encontraron resultados</h2>
         )}
       </div>
     </>
