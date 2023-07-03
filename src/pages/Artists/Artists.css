@@ -1,0 +1,25 @@
+span{
+    white-space: nowrap;
+}
+.hidden{
+    z-index: -1;
+}
+.backNav{
+    background-color: rgba(0, 0, 0, 1);
+    height: 130px;
+    width: 100%;
+}
+.arrow-icon{
+    border: double var(--main-color);
+    border-radius: 50%;
+}
+.arrow-icon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: .2s;
+
+}
+.arrow-icon:active{
+    transform: rotate(3.142rad);
+    transition: .8s;
+}

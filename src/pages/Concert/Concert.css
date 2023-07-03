@@ -1,0 +1,16 @@
+.Concert-container {
+  max-width: 1000px;
+}
+
+.Concert-banner {
+  height: 85vh;
+  background-color: rgba(0, 0, 0, .7);
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: color;
+  width: 100%;
+}
+
+.Concert-description {
+  white-space: pre-wrap;
+}
