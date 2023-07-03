@@ -34,7 +34,6 @@ export default function Profile() {
     // Refs
     const refName = useRef()
     const refLastName = useRef()
-    const refBirthDate = useRef()
     const refEmail = useRef()
     const refPassword = useRef()
     const refPassword2 = useRef()
@@ -65,7 +64,6 @@ export default function Profile() {
             name: refName.current.value,
             lastName: refLastName.current.value,
             email: refEmail.current.value,
-            birthDate: refBirthDate.current.value,
         }
         let objectEdit = {
             data,
@@ -180,10 +178,10 @@ export default function Profile() {
                                             {t("email")}:
                                             <input type="text" ref={refEmail} defaultValue={user.email} placeholder={user.email} />
                                         </label>
-                                        <label htmlFor="">
+{/*                                         <label htmlFor="">
                                             {t("birth")}:
                                             <input type="date" ref={refBirthDate} defaultValue={user.birthDate} placeholder={user.birthDate} />
-                                        </label>
+                                        </label> */}
                                         <div>
                                             <button className='btn-design-profile' onClick={e => setState("details")}>{t("cancel")}</button>
                                             <button className='btn-design-profile' onClick={e => handleEditProfile(e)}>{t("confirm_changes")}</button>
