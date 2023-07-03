@@ -71,7 +71,7 @@ export default function NavbarBS() {
                 <Link to="/" style={{textDecoration: 'none'}}>
                 <Navbar.Brand style={{ margin: "0" }}>
                     <img className="navbar-logo pb-2 pe-2" src="../assets/img/logo.png" alt="Logo" />
-                    POSE
+                    POSSE
                 </Navbar.Brand>
                 </Link>
                 <Navbar.Toggle ref={togglerRef} aria-controls="responsive-navbar-nav" />
