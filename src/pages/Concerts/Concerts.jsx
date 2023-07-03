@@ -31,7 +31,7 @@ const onSearch = e => {
   return (
     <>
       <div className="pt-4 container">
-        <h1 className="text-center">{t('concert')}</h1>
+        <h1 className="text-center">Eventos</h1>
         <div className="d-flex justify-content-between flex-wrap-reverse mb-5">
           <div>
             <select className="Concerts-select border me-5" defaultValue={type} onChange={changeType}>
