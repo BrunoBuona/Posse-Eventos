@@ -1,0 +1,16 @@
+.AdminButton {
+  text-decoration: none;
+}
+.isActive {
+  text-decoration: none;
+  
+}
+.isActive > div {
+  background-color: var(--main-color);
+}
+.isActive > div:hover {
+  background-color: var(--main-color-dark);
+}
+.AdminButton > div:hover {
+  background-color: #50555e;
+}

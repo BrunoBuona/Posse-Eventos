@@ -1,0 +1,12 @@
+.AdminLayout {
+  height: 100vh;
+  background-color: whitesmoke;
+  display: flex;
+}
+.AdminLayout > div {
+  overflow-y: auto;
+}
+.AdminMain {
+  flex: 1;
+  padding: 20px;
+}

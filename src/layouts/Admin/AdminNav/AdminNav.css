@@ -1,0 +1,18 @@
+.AdminNav {
+  background-color: #27282F;
+  height: 100%;
+  width: 300px;
+  overflow-y: auto;
+  
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  .AdminNav {
+    padding-top: 60px;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+  

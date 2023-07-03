@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3vw;
+}
+.navbar-logo{
+  width: 60px;
+  height: 60px;
+}
+.container-navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+}
+.nav-right-position{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.color-line-topnav{
+  background-color: var(--main-color);
+  height: 5px;
+  width: 100%;
+}
