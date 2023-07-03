@@ -23,8 +23,7 @@ export default function Form() {
         let userValue = {
             name: nameRef.current.value,
             lastName: lastNameRef.current.value,
-            photo: photoRef.current.value,
-            birthDate: ageRef.current.value,
+            dni: photoRef.current.value,
             email: emailRef.current.value,
             password: passwordRef.current.value,
         }
@@ -76,19 +75,15 @@ export default function Form() {
                         <div className="form-bodySign pt-3 w-50">
                             <div className="inputGroup">
                                 <input id="name" type="text" required autoComplete="off" ref={nameRef} />
-                                <label htmlFor="name">{t("name")}</label>
+                                <label htmlFor="name">Nombre</label>
                             </div>
                             <div className="inputGroup">
                                 <input id="lastName" type="text" required autoComplete="off" ref={lastNameRef} />
-                                <label htmlFor="lastName">{t("Lname")}</label>
+                                <label htmlFor="lastName">Apellido</label>
                             </div>
                             <div className="inputGroup">
                                 <input id="photo" type="text" required autoComplete="off" ref={photoRef} />
-                                <label htmlFor="photo">{t("photo_url")}</label>
-                            </div>
-                            <div className="inputGroup inputGroup-active">
-                                <input id="age" type="date" required autoComplete="off" ref={ageRef} />
-                                <label htmlFor="photo">{t("birth")}</label>
+                                <label htmlFor="photo">DNI</label>
                             </div>
                             <div className="inputGroup">
                                 <input id="email" type="email" required autoComplete="off" ref={emailRef} />
@@ -96,7 +91,7 @@ export default function Form() {
                             </div>
                             <div className="inputGroup">
                                 <input id="password" type="password" required autoComplete="off" ref={passwordRef} />
-                                <label htmlFor="password">Password</label>
+                                <label htmlFor="password">Contraseña</label>
                             </div>
                             <div className="d-flex justify-content-center">
                                 <button onClick={saveData} className="submit2Sign">{t("sign_up")}</button>
