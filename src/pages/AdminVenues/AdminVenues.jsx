@@ -63,7 +63,7 @@ export default function AdminVenues() {
           <Spinner className="text-center" />
         </div>
       ) : venues.length > 0 ? (
-        <AdminTable title="Venues" collection={venues} editRoute="/admin/venues/edit/" deleteOnClick={deleteOnClick} />
+        <AdminTable title="Localizaciones" collection={venues} editRoute="/admin/venues/edit/" deleteOnClick={deleteOnClick} />
       ) : (
         <h2 className="text-center text-main">{message}</h2>
       )}

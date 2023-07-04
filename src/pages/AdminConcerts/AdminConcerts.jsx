@@ -64,7 +64,7 @@ export default function AdminConcerts() {
         </div>
       ) : concerts.length > 0 ? (
         <AdminTable
-          title="Concerts"
+          title="Eventos"
           collection={concerts}
           editRoute="/admin/concerts/edit/"
           deleteOnClick={deleteOnClick}

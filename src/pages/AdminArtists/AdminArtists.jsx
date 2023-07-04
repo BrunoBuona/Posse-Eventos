@@ -53,7 +53,7 @@ export default function AdminArtists() {
       <Link to="/admin/artists/new">
         <Button variant="success" className="mb-4">New Artist</Button>
       </Link>
-      <AdminTable title="Artists" collection={artists} editRoute="/admin/artists/edit/" deleteOnClick={removeArtist} />
+      <AdminTable title="Artistas" collection={artists} editRoute="/admin/artists/edit/" deleteOnClick={removeArtist} />
     </div>
   )
 }
