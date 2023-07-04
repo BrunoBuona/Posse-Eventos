@@ -51,9 +51,9 @@ const onSearch = e => {
           <div className="d-flex justify-content-center">
             <Spinner className="text-center" />
           </div>
-        ) : concerts.length > 0 ? (
+        ) : concerts?.length > 0 ? (
           <Row xs={1} md={2} xl={3}>
-            {concerts.map(concert => (
+            {concerts?.map(concert => (
               <Col key={concert._id} className="mb-5">
                 <ConcertCard concert={concert} />
               </Col>
