@@ -1,4 +1,4 @@
-table {
+.table2 {
     width: 100%;
     background-color: #FFFFFF;
     border-collapse: collapse;
@@ -10,14 +10,14 @@ table {
     text-align: center;
   }
   
-  table td th tr {
+  .table2 .td2 .th2 .tr2 {
     border-width: 2px;
     border-color: #0B0617;
     border-style: solid;
     padding: 5px;
   }
   
-  table thead {
+  .table2 .thead2 {
     background-color: #7344f4;
     border-width: 2px;
     border-color: #0B0617;
