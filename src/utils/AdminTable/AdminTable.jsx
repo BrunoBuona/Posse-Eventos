@@ -17,21 +17,21 @@ export default function AdminTable({ editRoute, deleteOnClick, title, collection
         </tr>
       </thead>
       <tbody>
-        {collection.map(document => {
+        {collection?.map(document => {
           return (
-            <tr key={document._id}>
-              <td>{document.name}</td>
+            <tr key={document?._id}>
+              <td>{document?.name}</td>
               <td className="AdminTable-buttonContainer">
                 <Button
                   variant="danger"
                   className="MyCollection-deleteButton"
-                  onClick={() => deleteOnClick(document._id, document.name)}
+                  onClick={() => deleteOnClick(document?._id, document?.name)}
                 >
                   <FontAwesomeIcon icon={faTrash} />
                 </Button>
               </td>
               <td className="AdminTable-buttonContainer">
-                <Link to={editRoute + document._id}>
+                <Link to={editRoute + document?._id}>
                   <Button className="MyCollection-editButton">
                     <FontAwesomeIcon icon={faEdit} />
                   </Button>

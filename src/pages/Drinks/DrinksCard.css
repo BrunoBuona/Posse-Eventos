@@ -1,0 +1,51 @@
+.detail__image--container {
+   height: 85vh;
+   background-color: rgba(0, 0, 0, .7);
+   background-size: cover;
+   background-attachment: fixed;
+   background-blend-mode: color;
+   width: 100%;
+}
+.concert-link{
+   color: aliceblue;
+}
+
+.text-up{
+   color: purple;
+}
+
+.concert-link:hover{
+   cursor: pointer;
+   color: var(--main-color);
+   transform: scale(1.01);
+   transition: .2s;
+}
+.genre__key {
+   text-decoration: underline;
+   font-weight: 600;
+}
+
+.text-detail{
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+   height: 80%;
+   padding-bottom: 1em;
+   font-size: 4rem;
+   text-shadow: 3px 0px 0px rgba(0,0,0,1);
+}
+
+iframe {
+   width: 80%;
+   height: 300px;
+}
+
+@media screen and (max-width: 1024px) {
+   
+   .container-details{
+      flex-direction: column;
+   }
+   iframe{
+      height: 280px;
+   }
+}

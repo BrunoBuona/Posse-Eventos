@@ -14,12 +14,13 @@ export default function AdminNav({ isMobile, menuIsOpen }) {
           exit={{ x: -768 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <AdminButton to="/admin/home" name="Home" />
-          <AdminButton to="/admin/concerts" name="Concerts" />
-          <AdminButton to="/admin/artists" name="Artists" />
-          <AdminButton to="/admin/venues" name="Venues" />
+          <AdminButton to="/admin/home" name="Inicio" />
+          <AdminButton to="/admin/concerts" name="Eventos" />
+          <AdminButton to="/admin/artists" name="Artistas" />
+          <AdminButton to="/admin/drinks" name="Bebidas" />
+          <AdminButton to="/admin/venues" name="Localizaciones" />
           <div className="mt-auto">
-            <AdminButton to="/" name="Back to site" />
+            <AdminButton to="/" name="Volver al sitio web" />
           </div>
         </motion.div>
       )}

@@ -19,17 +19,21 @@ import AdminHome from "./pages/AdminHome/AdminHome";
 import AdminConcerts from "./pages/AdminConcerts/AdminConcerts";
 import AdminArtists from "./pages/AdminArtists/AdminArtists";
 import AdminVenues from "./pages/AdminVenues/AdminVenues";
+import AdminDrinks from "./pages/AdminDrinks/AdminDrinks";
 import NewConcert from "./pages/NewConcert/NewConcert";
 import { ProtectedRoute } from "./utils/ProtectedRoute/ProtectedRoute";
 import EditConcert from "./pages/EditConcert/EditConcert";
 import NewVenue from "./pages/NewVenue/NewVenue";
+import NewDrinks from "./pages/NewDrinks/NewDrinks";
 import EditVenue from "./pages/EditVenue/EditVenue";
 import EditArtist from "./pages/EditArtist/EditArtist";
+import EditDrink from "./pages/EditDrink/EditDrink";
 import ProcessPayment from "./pages/ProcessPayment/ProcessPayment";
 import NotFound from "./pages/NotFound/NotFound";
 import Profile from "./pages/MyProfile/MyProfile";
 import Chat from "./pages/Chat/Chat";
 import WorkWithUs from "./pages/WorkWithUs/WorkWithUs";
+import DrinksCard from "./pages/Drinks/DrinksCard";
 
 export default function App() {
   const dispatch = useDispatch()
@@ -69,6 +73,9 @@ let isLoading = async() => {
               <Route path="artists" element={<AdminArtists />}/>
               <Route path="artists/new" element={<NewArtist/>}/>
               <Route path="artists/edit/:id" element={<EditArtist/>}/>
+              <Route path="drinks" element={<AdminDrinks />}/>
+              <Route path="drinks/new" element={<NewDrinks/>}/>
+              <Route path="drinks/edit/:id" element={<EditDrink/>}/>
               <Route path="venues" element={<AdminVenues />}/>
               <Route path="venues/new" element={<NewVenue />}/>
               <Route path="venues/edit/:id" element={<EditVenue />}/>
@@ -86,6 +93,7 @@ let isLoading = async() => {
           </Route>
           <Route path="artists" element={<Artists/>}/>
           <Route path="artists/:id" element={<ArtistDetail/>}/>
+          <Route path="drinks/:id" element={<DrinksCard/>}/>
           <Route path="chat" element={<Chat />} />
           <Route element={<ProtectedRoute isAllowed={!online} reDirect={'/'}/> }>
             <Route path="signup" element={<SignUp />} />
