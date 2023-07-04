@@ -63,17 +63,6 @@ export default function Product(props) {
         {item.price.toLocaleString()}
       </td>
       <td className="text-center" style={{ width: "200px" }}>
-        <div className="d-flex align-items-center justify-content-center h-100">
-          <button className="btn btn-primary mx-2 " onClick={remove}>
-            -
-          </button>
-          {item.quantity}
-          <button className="btn btn-primary mx-2" onClick={add}>
-            +
-          </button>
-        </div>
-      </td>
-      <td className="text-center" style={{ width: "200px" }}>
         {(item.price * item.quantity).toLocaleString()}
       </td>
     </tr>
