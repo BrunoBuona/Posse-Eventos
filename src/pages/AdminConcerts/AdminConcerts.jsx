@@ -22,8 +22,8 @@ export default function AdminConcerts() {
   const deleteOnClick = async (id, name) => {
     try {
       let confirmation = await Swal.fire({
-        title: "Confirmation",
-        text: `Are you sure do you want to delete ${name}?`,
+        title: "Confirmación",
+        text: `¿Estas seguro de eliminar el evento: ${name}?`,
         icon: "question",
         showConfirmButton: true,
         showDenyButton: true,

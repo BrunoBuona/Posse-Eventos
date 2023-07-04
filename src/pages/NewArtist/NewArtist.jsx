@@ -16,7 +16,7 @@ const NewArtist = () => {
     let submit = (e) => {
         e.preventDefault();
         Swal.fire({
-            title: "Confirm new Artist?",
+            title: "¿Confirmar nuevo Artista?",
             text: "you can edit or remove the artist later from the admin panel",
             icon: "warning",
             showCloseButton: true,
@@ -42,7 +42,7 @@ const NewArtist = () => {
                             if(res.data.success){
                                 let id = res.data.data
                                 Swal.fire({
-                                    title: "Success",
+                                    title: "Artista creado!",
                                     text: res.data.message,
                                     icon: "success"
                                 })
@@ -89,16 +89,16 @@ const NewArtist = () => {
 
   return (
     <div className='container'>
-        <h1 className='text-center'>New Artist</h1>
+        <h1 className='text-center'>Nuevo Artista</h1>
         <form ref={formRef} className='d-flex flex-column p-1' onSubmit={submit}>
-            <label className='d-flex flex-column fs-6 m-1'>Name: 
+            <label className='d-flex flex-column fs-6 m-1'>Nombre del Artista: 
                 <input className='ms-1' type="text" name="name" required/>
             </label>
-            <label className='d-flex flex-column fs-6 m-1'>Photo url: 
+            <label className='d-flex flex-column fs-6 m-1'>URL de la foto: 
                 <input className='ms-1' type="url" name="photo" required/>
             </label>
             <fieldset>
-                <legend className='fs-6'>Genres:</legend>
+                <legend className='fs-6'>Generos Musicales del Artista:</legend>
                 <div className='d-flex align-items-center justify-content-center flex-wrap gap-3'>
                     {genres.map(el => 
                     <label key={el} className='m-1'>
@@ -106,21 +106,21 @@ const NewArtist = () => {
                     </label>)}
                 </div>
             </fieldset>
-            <label className='d-flex flex-column fs-6 m-1'>Description: 
+            <label className='d-flex flex-column fs-6 m-1'>Descripcion: 
                 <textarea className='ms-1 w-100' name="description" rows="10" required></textarea>
             </label>
-            <label className='d-flex flex-column fs-6 m-1'>YouTube Video: 
+            <label className='d-flex flex-column fs-6 m-1'>Video de YouTube Destacado (URL): 
                 <input className='ms-1' type="url" name="youtubeVideo"/>
             </label>
-            <label className='d-flex flex-column fs-6 m-1'>YouTube Channel: 
+            <label className='d-flex flex-column fs-6 m-1'>Canal de YouTube (URL): 
                 <input className='ms-1' type="url" name="youtubeChannel"/>
             </label>
-            <label className='d-flex flex-column fs-6 m-1'>Spotify playlist: 
+            <label className='d-flex flex-column fs-6 m-1'>Playlist de Spotify (URL): 
                 <input className='ms-1' type="url" name="spotifyPlaylist"/>
             </label>
             <div className='d-flex justify-content-evenly align-items-center'>
-                <input className='btn btn-outline-danger' type="reset" value={'Clear'}/>
-                <input className='btn btn-outline-success' type="submit" value={'Submit'}/>
+                <input className='btn btn-outline-danger' type="reset" value={'Reiniciar'}/>
+                <input className='btn btn-outline-success' type="submit" value={'Crear'}/>
             </div>
         </form>
     </div>

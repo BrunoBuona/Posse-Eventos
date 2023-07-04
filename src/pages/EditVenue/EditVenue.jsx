@@ -3,7 +3,6 @@ import { Field, Form, Formik } from "formik";
 import { Button, Spinner } from "react-bootstrap";
 import { BASE_URL } from "../../api/url";
 import axios from "axios";
-import "./EditVenue.css";
 import Swal from "sweetalert2";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
@@ -70,7 +69,7 @@ export default function EditVenue() {
 
   return (
     <div>
-      <h1>Edit Venue</h1>
+      <h1>Editar Localización</h1>
       {loading ? (
         <div className="d-flex justify-content-center">
           <Spinner className="text-center" />
@@ -85,31 +84,31 @@ export default function EditVenue() {
           {({ values }) => (
             <Form>
               <div>
-                <label htmlFor="name">Name:</label>
-                <Field name="name" placeholder="Name" value={values.name} />
+                <label htmlFor="name">Nombre de la Localización:</label>
+                <Field name="name" placeholder="Rancho de la V" value={values.name} />
               </div>
               <div>
-                <label htmlFor="address">Address:</label>
-                <Field name="address" placeholder="Address" value={values.address} />
+                <label htmlFor="address">Dirección de la Localización:</label>
+                <Field name="address" placeholder="KM 11 - 22" value={values.address} />
               </div>
               <div>
-                <label htmlFor="capacity">Capacity:</label>
-                <Field name="capacity" placeholder="Capacity" type="number" value={values.capacity} />
+                <label htmlFor="capacity">Capacidad de la Localización:</label>
+                <Field name="capacity" placeholder="258" type="number" value={values.capacity} />
               </div>
               <div>
-                <label htmlFor="type">Type:</label>
-                <Field name="type" placeholder="Type" value={values.type} />
+                <label htmlFor="type">Tipo de Localización:</label>
+                <Field name="type" placeholder="Campo, Club Techno, etc" value={values.type} />
               </div>
               <div>
-                <label htmlFor="country">Country:</label>
-                <Field name="country" placeholder="Country" value={values.country} />
+                <label htmlFor="country">Pais de la Localización:</label>
+                <Field name="country" placeholder="Pais" value={values.country} />
               </div>
               <div>
-                <label htmlFor="city">City:</label>
-                <Field name="city" placeholder="city" value={values.city} />
+                <label htmlFor="city">Ciudad de la Localización:</label>
+                <Field name="city" placeholder="Ciudad" value={values.city} />
               </div>
               <Button type="submit" variant="success">
-                Edit
+                Enviar modificación
               </Button>
             </Form>
           )}

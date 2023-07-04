@@ -85,7 +85,7 @@ export default function EditConcert() {
 
   return (
     <div>
-      <h1>Edit Concert</h1>
+      <h1>Editar Evento</h1>
       {loading ? (
         <div className="d-flex justify-content-center">
           <Spinner className="text-center" />
@@ -100,36 +100,37 @@ export default function EditConcert() {
           {({ values }) => (
             <Form>
               <div>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">Nombre:</label>
                 <Field name="name" placeholder="Name" value={values.name} />
               </div>
               <div>
-                <label htmlFor="photo">Photo:</label>
+                <label htmlFor="photo">URL de Imagen de la Tarjeta:</label>
                 <Field name="photo" placeholder="Photo" value={values.photo} />
               </div>
               <div>
-                <label htmlFor="banner">Banner:</label>
+                <label htmlFor="banner">URL de Banner para Detalles:</label>
                 <Field name="banner" placeholder="Banner" value={values.banner} />
               </div>
               <div>
-                <label htmlFor="date">Date:</label>
+                <label htmlFor="date">Fecha:</label>
                 <Field name="date" type="datetime-local" value={values.date} />
               </div>
               <div>
-                <label htmlFor="type">Type:</label>
+                <label htmlFor="type">Tipo:</label>
                 <br />
                 <Field as="select" name="type" value={values.type}>
-                  <option value="">-- Select Type --</option>
-                  <option value="concert">Concert</option>
-                  <option value="festival">Festival</option>
+                  <option value="">-- Seleccionar --</option>
+                  <option value="Previa">Previa</option>
+                  <option value="Evento">Evento</option>
+                  <option value="After">After</option>
                 </Field>
               </div>
 
               <div>
-                <label htmlFor="venue">Venue:</label>
+                <label htmlFor="venue">Localización:</label>
                 <br />
                 <Field as="select" name="venue" value={values.venue}>
-                  <option value="">-- Select Venue --</option>
+                  <option value="">-- Seleccionar --</option>
                   {venues.map(venue => (
                     <option key={venue._id} value={venue._id}>
                       {venue.name}
@@ -143,7 +144,7 @@ export default function EditConcert() {
                   name="artists"
                   render={arrayHelpers => (
                     <div>
-                      <h3 className="fs-4 mt-2">Artists</h3>
+                      <h3 className="fs-4 mt-2">Artistas</h3>
                       {values.artists.map((artistValue, index) => (
                         <div key={index} className="mb-4">
                           <Button
@@ -155,7 +156,7 @@ export default function EditConcert() {
                             X
                           </Button>
                           <Field as="select" name={`artists.${index}`} value={artistValue}>
-                            <option value="">-- Select Artist --</option>
+                            <option value="">-- Seleccionar --</option>
                             {artists.map(artist => (
                               <option key={artist._id} value={artist._id}>
                                 {artist.name}
@@ -165,7 +166,7 @@ export default function EditConcert() {
                         </div>
                       ))}
                       <Button type="button" onClick={() => arrayHelpers.push("")}>
-                        Add Artist
+                        Añadir otro artista
                       </Button>
                     </div>
                   )}
@@ -173,26 +174,26 @@ export default function EditConcert() {
               </div>
 
               <div className="ms-3">
-                <h3 className="fs-4 mt-2">Category</h3>
+                <h3 className="fs-4 mt-2">Venta de Entrada</h3>
                 <div>
-                  <label htmlFor="categoryName">Category Name:</label>
+                  <label htmlFor="categoryName">Nombre de la Entrada:</label>
                   <Field name="category.name" id="categoryName" type="text" value={values.category.name} />
                 </div>
                 <div>
-                  <label htmlFor="categoryPrice">Category Price:</label>
+                  <label htmlFor="categoryPrice">Precio de la Entrada:</label>
                   <Field name="category.price" id="categoryPrice" type="number" value={values.category.price} />
                 </div>
                 <div>
-                  <label htmlFor="categoryArea">Category Area:</label>
+                  <label htmlFor="categoryArea">Categoría de la Entrada:</label>
                   <Field name="category.area" id="categoryArea" type="text" value={values.category.area} />
                 </div>
               </div>
               <div>
-                <label htmlFor="description">Description:</label>
+                <label htmlFor="description">Descripcion de la Entrada:</label>
                 <Field as="textarea" name="description" value={values.description} />
               </div>
               <Button type="submit" variant="success">
-                Edit
+                Enviar Modificación
               </Button>
             </Form>
           )}

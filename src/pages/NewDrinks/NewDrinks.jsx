@@ -75,13 +75,13 @@ const NewDrinks = () => {
     <div className='container'>
         <h1 className='text-center'>Nueva Bebida</h1>
         <form ref={formRef} className='d-flex flex-column p-1' onSubmit={submit}>
-            <label className='d-flex flex-column fs-6 m-1'>Nombre: 
+            <label className='d-flex flex-column fs-6 m-1'>Nombre de la Bebida: 
                 <input className='ms-1' type="text" name="name" required/>
             </label>
-            <label className='d-flex flex-column fs-6 m-1'>Description: 
+            <label className='d-flex flex-column fs-6 m-1'>Descripción de la Bebida: 
                 <textarea className='ms-1 w-100' name="description" rows="10" required></textarea>
             </label>
-            <label className='d-flex flex-column fs-6 m-1'>Precio 
+            <label className='d-flex flex-column fs-6 m-1'>Precio de la Bebida
                 <input className='ms-1' type="number" name="price" required/>
             </label>
             <div className='d-flex justify-content-evenly align-items-center'>

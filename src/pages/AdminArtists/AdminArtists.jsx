@@ -20,8 +20,8 @@ export default function AdminArtists() {
 
   let removeArtist = (id, name) => {
       Swal.fire({
-            title: "Delete artist?",
-            text: "Once deleted, you will not be able to recover this",
+            title: "¿Eliminar artista?",
+            text: "Una vez eliminado. No podrás deshacer esta acción",
             icon: "warning",
             showCloseButton: true,
             showConfirmButton: true,
@@ -32,8 +32,8 @@ export default function AdminArtists() {
           dispatch(deleteArtist({id, token}))
             .then(res => {
               Swal.fire({
-                title: "Success",
-                text: res.payload.message,
+                title: "Operación completada.",
+                text: "Artista eliminado exitosamente.",
                 icon: "success"
               })
             })

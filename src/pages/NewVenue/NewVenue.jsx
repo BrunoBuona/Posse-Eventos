@@ -28,7 +28,7 @@ export default function NewVenue() {
     try {
       let res = await axios.post(`${BASE_URL}/api/venues`, values, headers);
       Swal.fire({
-        title: "Success",
+        title: "Localización Creada",
         text: res.data.message,
         icon: "success",
       });
@@ -60,7 +60,7 @@ export default function NewVenue() {
 
   return (
     <div>
-      <h1>New Venue</h1>
+      <h1>Nueva Localización</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={(values, { resetForm }) => {
@@ -70,31 +70,31 @@ export default function NewVenue() {
         {({ values }) => (
           <Form>
             <div>
-              <label htmlFor="name">Name:</label>
-              <Field name="name" placeholder="Name" />
+              <label htmlFor="name">Nombre:</label>
+              <Field name="name" placeholder="Ranchito de la V" />
             </div>
             <div>
-              <label htmlFor="address">Address:</label>
-              <Field name="address" placeholder="Address" />
+              <label htmlFor="address">Dirección:</label>
+              <Field name="address" placeholder="Ruta 11 - KM 2" />
             </div>
             <div>
-              <label htmlFor="capacity">Capacity:</label>
-              <Field name="capacity" placeholder="Capacity" type="number" />
+              <label htmlFor="capacity">Capacidad del Lugar:</label>
+              <Field name="capacity" placeholder="280" type="number" />
             </div>
             <div>
-              <label htmlFor="type">Type:</label>
-              <Field name="type" placeholder="Type" />
+              <label htmlFor="type">Tipo de Lugar:</label>
+              <Field name="type" placeholder="Campo, Club Techno, etc." />
             </div>
             <div>
-              <label htmlFor="country">Country:</label>
-              <Field name="country" placeholder="Country" />
+              <label htmlFor="country">Pais:</label>
+              <Field name="country" placeholder="Argentina" />
             </div>
             <div>
-              <label htmlFor="city">City:</label>
-              <Field name="city" placeholder="city" />
+              <label htmlFor="city">Ciudad:</label>
+              <Field name="city" placeholder="Pinamar" />
             </div>
             <Button type="submit" variant="success">
-              Submit
+              Crear Localización
             </Button>
           </Form>
         )}

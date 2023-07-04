@@ -87,7 +87,7 @@ export default function NewConcert() {
 
   return (
     <div>
-      <h1>New Concert</h1>
+      <h1>Nuevo Evento</h1>
       {loading ? (
         <div className="d-flex justify-content-center">
           <Spinner className="text-center" />
@@ -102,36 +102,37 @@ export default function NewConcert() {
           {({ values }) => (
             <Form>
               <div>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">Nombre:</label>
                 <Field name="name" placeholder="Name" />
               </div>
               <div>
-                <label htmlFor="photo">Photo:</label>
+                <label htmlFor="photo">URL de Imagen de la Tarjeta:</label>
                 <Field name="photo" placeholder="Photo" />
               </div>
               <div>
-                <label htmlFor="banner">Banner:</label>
+                <label htmlFor="banner">URL de Imagen para Detalles:</label>
                 <Field name="banner" placeholder="Banner" />
               </div>
               <div>
-                <label htmlFor="date">Date:</label>
+                <label htmlFor="date">Fecha del Evento:</label>
                 <Field name="date" type="datetime-local" />
               </div>
               <div>
-                <label htmlFor="type">Type:</label>
+                <label htmlFor="type">Tipo de Evento:</label>
                 <br />
                 <Field as="select" name="type">
-                  <option value="">-- Select Type --</option>
-                  <option value="concert">Concert</option>
-                  <option value="festival">Festival</option>
+                  <option value="">-- Seleccionar --</option>
+                  <option value="Previa">Previa</option>
+                  <option value="Evento">Evento</option>
+                  <option value="After">After</option>
                 </Field>
               </div>
 
               <div>
-                <label htmlFor="venue">Venue:</label>
+                <label htmlFor="venue">Localización:</label>
                 <br />
                 <Field as="select" name="venue">
-                  <option value="">-- Select Venue --</option>
+                  <option value="">-- Seleccionar --</option>
                   {venues.map(venue => (
                     <option key={venue._id} value={venue._id}>
                       {venue.name}
@@ -145,7 +146,7 @@ export default function NewConcert() {
                   name="artists"
                   render={arrayHelpers => (
                     <div>
-                      <h3 className="fs-4 mt-2">Artists</h3>
+                      <h3 className="fs-4 mt-2">Artistas</h3>
                       {values.artists.map((artistValue, index) => (
                         <div key={index} className="mb-4">
                           <Button
@@ -157,7 +158,7 @@ export default function NewConcert() {
                             X
                           </Button>
                           <Field as="select" name={`artists.${index}`}>
-                            <option value="">-- Select Artist --</option>
+                            <option value="">-- Seleccionar --</option>
                             {artists.map(artist => (
                               <option key={artist._id} value={artist._id}>
                                 {artist.name}
@@ -167,7 +168,7 @@ export default function NewConcert() {
                         </div>
                       ))}
                       <Button type="button" onClick={() => arrayHelpers.push("")}>
-                        Add Artist
+                        Añadir otro artista
                       </Button>
                     </div>
                   )}
@@ -175,26 +176,26 @@ export default function NewConcert() {
               </div>
 
               <div className="ms-3">
-                <h3 className="fs-4 mt-2">Category</h3>
+                <h3 className="fs-4 mt-2">Venta de Entrada</h3>
                 <div>
-                  <label htmlFor="categoryName">Category Name:</label>
+                  <label htmlFor="categoryName">Nombre de la Entrada:</label>
                   <Field name="category.name" id="categoryName" type="text" />
                 </div>
                 <div>
-                  <label htmlFor="categoryPrice">Category Price:</label>
+                  <label htmlFor="categoryPrice">Precio de la Entrada:</label>
                   <Field name="category.price" id="categoryPrice" type="number" />
                 </div>
                 <div>
-                  <label htmlFor="categoryArea">Category Area:</label>
+                  <label htmlFor="categoryArea">Categoría de la Entrada:</label>
                   <Field name="category.area" id="categoryArea" type="text" />
                 </div>
               </div>
               <div>
-                <label htmlFor="description">Description:</label>
+                <label htmlFor="description">Descripcion del Evento:</label>
                 <Field as="textarea" name="description"></Field>
               </div>
               <Button type="submit" variant="success">
-                Submit
+                Crear nuevo Evento
               </Button>
             </Form>
           )}

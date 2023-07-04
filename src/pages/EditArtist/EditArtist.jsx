@@ -38,8 +38,8 @@ const EditArtist = () => {
     let submit = (e) => {
         e.preventDefault();
         Swal.fire({
-            title: "Edit artist?",
-            text: "you can edit or remove the artist later from the admin panel",
+            title: "¿Editar artist?",
+            text: "Podes editarlo nuevamente luego.",
             icon: "warning",
             showCloseButton: true,
             showConfirmButton: true,
@@ -109,17 +109,17 @@ const EditArtist = () => {
 
   return (
     <div className='container'>
-        <h1 className='text-center'>Edit Artist</h1>
+        <h1 className='text-center'>Editar Artista</h1>
         <form ref={formRef} className='d-flex flex-column p-1' onSubmit={submit}>
-            <label className='d-flex flex-column fs-6 m-1'>Name: 
+            <label className='d-flex flex-column fs-6 m-1'>Nombre: 
                 <input className='ms-1' type="text" name="name" onChange={(e) => setName(e.target.value)
     } value={name} required/>
             </label>
-            <label className='d-flex flex-column fs-6 m-1'>Photo url: 
+            <label className='d-flex flex-column fs-6 m-1'>URL de la foto del Artista: 
                 <input className='ms-1' type="url" name="photo" onChange={(e) => setPhoto(e.target.value)} value={photo} required/>
             </label>
             <fieldset>
-                <legend className='fs-6'>Genres:</legend>
+                <legend className='fs-6'>Generos Musicales:</legend>
                 <div className='d-flex align-items-center justify-content-center flex-wrap gap-3'>
                     {genres.map(el => 
                     <label key={el} className='m-1'>
@@ -127,21 +127,21 @@ const EditArtist = () => {
                     </label>)}
                 </div>
             </fieldset>
-            <label className='d-flex flex-column fs-6 m-1'>Description: 
+            <label className='d-flex flex-column fs-6 m-1'>Descripción: 
                 <textarea className='ms-1 w-100' name="description" rows="10" onChange={(e) => setDescription(e.target.value)} value={description} required></textarea>
             </label>
-            <label className='d-flex flex-column fs-6 m-1'>YouTube Video: 
+            <label className='d-flex flex-column fs-6 m-1'>URL de video destacado de YouTube: 
                 <input className='ms-1' type="url" name="youtubeVideo" onChange={(e) => setYoutubeVideo(e.target.value)} value={youtubeVideo}/>
             </label>
-            <label className='d-flex flex-column fs-6 m-1'>YouTube Channel: 
+            <label className='d-flex flex-column fs-6 m-1'>URL de su canal de YouTube: 
                 <input className='ms-1' type="url" name="youtubeChannel" onChange={(e) => setYoutubeChannel(e.target.value)} value={youtubeChannel}/>
             </label>
-            <label className='d-flex flex-column fs-6 m-1'>Spotify playlist: 
+            <label className='d-flex flex-column fs-6 m-1'>URL de su Playlist de Spotify: 
                 <input className='ms-1' type="url" name="spotifyPlaylist" onChange={(e) => setSpotifyPlaylist(e.target.value)} value={spotifyPlaylist}/>
             </label>
             <div className='d-flex justify-content-evenly align-items-center'>
-                <input className='btn btn-outline-danger' type="reset" value={'Clear'}/>
-                <input className='btn btn-outline-success' type="submit" value={'Submit'}/>
+                <input className='btn btn-outline-danger' type="reset" value={'Reiniciar'}/>
+                <input className='btn btn-outline-success' type="submit" value={'Crear'}/>
             </div>
         </form>
     </div>
