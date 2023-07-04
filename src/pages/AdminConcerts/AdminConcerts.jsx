@@ -55,7 +55,7 @@ export default function AdminConcerts() {
     <div>
       <Link to="/admin/concerts/new">
         <Button variant="success" className="mb-4">
-          New Concert
+          Nuevo Evento
         </Button>
       </Link>
       {loading ? (

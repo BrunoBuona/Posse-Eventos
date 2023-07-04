@@ -55,7 +55,7 @@ export default function AdminVenues() {
     <div>
       <Link to="/admin/venues/new">
         <Button variant="success" className="mb-4">
-          New Venue
+          Nueva Localización
         </Button>
       </Link>
       {loading ? (
