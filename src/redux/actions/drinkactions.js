@@ -43,7 +43,7 @@ const getFilteredDrinks = createAsyncThunk('getFilteredDrinks', async(filter) =>
     }
 })
 
-const deleteDrink = createAsyncThunk('deleteDrink', async({id, token}) => {
+const deleteDrinks = createAsyncThunk('deleteDrink', async({id, token}) => {
     let headers = {headers: {'Authorization': `Bearer ${token}`}}
     try {
         let res = await axios.delete(`${BASE_URL}/api/drink/${id}`, headers)
@@ -67,6 +67,6 @@ const deleteDrink = createAsyncThunk('deleteDrink', async({id, token}) => {
 const drinksActions = {
     getDrinks,
     getFilteredDrinks,
-    deleteDrink
+    deleteDrinks
 }
 export default drinksActions

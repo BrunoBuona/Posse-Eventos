@@ -10,7 +10,7 @@ import drinksReducer from "./drinksReducer";
 
 const rootReducer = {
     artistsReducer,
-    drinks: drinksReducer,
+    drinksReducer,
     filterArtistReducer,
     concerts: concertsReducer,
     user: userReducers,
