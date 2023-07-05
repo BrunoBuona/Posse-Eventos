@@ -16,7 +16,7 @@ const EditArtist = () => {
     let [price, setPrice] = useState('')
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/api/drinks/${id}`)
+        axios.get(`${BASE_URL}/api/drink/${id}`)
         .then(res => {
             let {name, description, price} = res.data.data
             setName(name)
@@ -46,7 +46,7 @@ const EditArtist = () => {
                         price: values.price
                     }
                     let headers = {headers: {'Authorization': `Bearer ${token}`}}
-                    axios.patch(`${BASE_URL}/api/artists/${id}`, newDrink, headers)
+                    axios.patch(`${BASE_URL}/api/drink/${id}`, newDrink, headers)
                         .then(res => {
                             if(res.data.success){
                                 Swal.fire({

@@ -44,6 +44,12 @@ export default function AdminHome() {
               localizaciones.
             </td>
           </tr>
+          <tr className="tr2">
+            <td className="td2">Validar Tickets</td>
+            <td className="td2">
+              En esta sección podrás ver y aprobar los tickets de los usuarios.
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

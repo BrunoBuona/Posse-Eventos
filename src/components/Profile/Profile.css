@@ -144,37 +144,35 @@ input[type="file"] {
     text-transform: uppercase;
 }
 .scroll{
-    margin:4px, 4px;
-    padding:4px;
     height: 15%;
     overflow-x: hidden;
     overflow-y: auto;
-    text-align:justify;
+    text-align: center;
 }
 .container-box-profile{
     display: flex;
     flex-direction: column;
-    height: 30px;
+    justify-content: center;
+    padding: 15px;
+    align-items: center;
+    margin-bottom: 0.8rem;
     width: 100%;
-    background-color: #22013f;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 400px;
-    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(127, 30, 188, 0.896);
+    box-shadow: 2px 2px 2px  2px rgba(142, 62, 192, 0.542);
+    background-color: rgb(246, 253, 255);
 }
 .container-box-profile > p{
     text-decoration: none;
-    color: white; 
+    color: rgb(8, 0, 0); 
     max-width: 100%;
-    max-height: 70px;
 }
 .scroll-orders{
     margin:4px, 4px;
-    padding:4px;
     height: 90%;
     overflow-x: hidden;
     overflow-y: auto;
-    text-align:justify;
+    text-align: center;
 }
 
 .btn-design-profile{

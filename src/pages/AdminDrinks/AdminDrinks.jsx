@@ -10,7 +10,7 @@ import "./AdminDrinks.css";
 export default function AdminDrinks() {
   const drinks = useSelector(state => state.drinksReducer.drinks); // Acceder a la lista de bebidas dentro del estado
   const dispatch = useDispatch();
-  const { getDrinks, deleteDrink } = drinksActions;
+  const { getDrinks, deleteDrinks } = drinksActions;
   let { token } = useSelector(state => state.user);
 
   useEffect(() => {
@@ -19,40 +19,41 @@ export default function AdminDrinks() {
 
   let removeDrink = (id, name) => {
     Swal.fire({
-      title: "¿Eliminar Bebida?",
-      text: "Esta acción es permanente.",
-      icon: "warning",
-      showCloseButton: false,
-      showConfirmButton: true,
-      showDenyButton: true,
+          title: "¿Eliminar Bebida?",
+          text: "Una vez eliminada. No podrás deshacer esta acción",
+          icon: "warning",
+          showCloseButton: true,
+          showConfirmButton: true,
+          showDenyButton: true,
     })
-      .then(result => {
-        if (result.isConfirmed) {
-          dispatch(deleteDrink({ id, token }))
-            .then(res => {
-              Swal.fire({
-                title: "Success",
-                text: res.payload.message,
-                icon: "success"
-              });
+    .then(result => {
+      if(result.isConfirmed){
+        dispatch(deleteDrinks({id, token}))
+          .then(res => {
+            Swal.fire({
+              title: "Operación completada.",
+              text: "Bebida eliminada exitosamente.",
+              icon: "success"
             })
-            .catch(err => {
-              Swal.fire({
-                title: "Error",
-                text: err.message,
-                icon: "error",
-              });
-            });
-        }
-      });
-  };
+          })
+          .catch(err => {
+            Swal.fire({
+              title: "Error",
+              text: err.message,
+              icon: "error",
+            })
+          })
+      }
+    })
+}
+
 
   return (
     <div>
       <Link to="/admin/drinks/new">
         <Button variant="success" className="mb-4">Nueva Bebida</Button>
       </Link>
-      <AdminTable title="Bebidas" collection={drinks} editRoute="/admin/drink/edit/" deleteOnClick={removeDrink} />
+      <AdminTable title="Bebidas" collection={drinks} editRoute="/admin/drinks/edit/" deleteOnClick={removeDrink} />
     </div>
   );
 }

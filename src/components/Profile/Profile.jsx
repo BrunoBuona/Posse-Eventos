@@ -74,7 +74,7 @@ export default function Profile() {
 
         // Alert
         Swal.fire({
-            title: 'Profile updated',
+            title: 'Cuenta Actualizada.',
             icon: 'success',
             confirmButtonText: 'OK'
         })
@@ -101,7 +101,7 @@ export default function Profile() {
 
         // Alert
         Swal.fire({
-            title: 'Password Updated',
+            title: 'Contraseña Actualizada.',
             icon: 'success',
             confirmButtonText: 'OK'
         })
@@ -138,11 +138,8 @@ export default function Profile() {
                             <div className="Profile-Internal-Block2">
                                 <h6 onClick={e => setState("changePwd")}>{t("user_pass")}</h6>
                             </div>
-                            {/* <div className="Profile-Internal-Block2">
-                                <h6 onClick={e => setState("activity")}>{t("user_ac")}</h6>
-                            </div> */}
                             <div className="Profile-Internal-Block2">
-                                <h6 onClick={e => setState("orders")}>{t("user_or")}</h6>
+                                <h6 onClick={e => setState("orders")}>{"Mis Tickets"}</h6>
                             </div>
                         </div>
                     </div>
@@ -219,46 +216,17 @@ export default function Profile() {
                                     </div>
                                 </div>
                             }
-                            {state === "activity" &&
-                                <>
-                                    <div className="title-profile">
-                                        <h2>Your activity</h2>
-                                    </div>
-                                    <div className="title-profile">
-                                        <h2>Your Reactions</h2>
-                                    </div>
-                                    <div className="scroll">
-                                        <div className="container-box-profile">
-                                            <p>You liked this concert: <span>Iron Maiden</span></p>
-                                        </div>
-                                        <div className="container-box-profile">
-                                            <p>You Hated this concert: <span>Iron Maiden</span></p>
-                                        </div>
-                                    </div>
-                                    <div className="title-profile">
-                                        <h2>Your Comments</h2>
-                                    </div>
-                                    <div className="scroll">
-                                        <div className="container-box-profile">
-                                            <p>You commented this concert: Iron Maiden</p>
-                                        </div>
-                                        <div className="container-box-profile">
-                                            <p>You commented this concert: Saxo Violento</p>
-                                        </div>
-                                    </div>
-                                </>
-                            }
                             {state === "orders" &&
                                 <>
                                     <div className="title-profile">
-                                        <h2>{t("user_or")}</h2>
+                                        <h2>{"Mis Tickets"}</h2>
                                     </div>
                                     <div className="scroll-orders">
                                         {orders.map((order) => {
                                             console.log(orders)
                                             return (
                                                 <div className="container-box-profile">
-                                                    <p>{order.items.map(e => e.concertName)} | {new Date(order.date).toLocaleDateString()}</p>
+                                                    <p>{order.items.map(e => e.concertName)} | {new Date(order.date).toLocaleDateString()} | {order.orderId}</p>
                                                 </div>
                                             )
                                         })}

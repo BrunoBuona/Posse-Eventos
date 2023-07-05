@@ -13,11 +13,15 @@ function Footer() {
                     
                     <button className="footer-social-btns">
                         <SocialIcon className="icon-social" network="instagram" bgColor="#9F00FF" fgColor="#ffffff" style={{ height: 40, width: 40 }} />
+                        <a target="_blank" style={{textDecoration:'none',color:'#ffffff'}} href="https://www.instagram.com/possestarlets/">
                         <h6 className="footer-social-text">Instagram</h6>
+                        </a>
                     </button>
                     <button className="footer-social-btns">
-                        <SocialIcon className="icon-social" network="twitter" bgColor="#9F00FF" fgColor="#ffffff" style={{ height: 40, width: 40 }} />
-                        <h6 className="footer-social-text">Twitter</h6>
+                        <SocialIcon className="icon-social" network="whatsapp" bgColor="#9F00FF" fgColor="#ffffff" style={{ height: 40, width: 40 }} />
+                        <a style={{textDecoration:'none',color:'#ffffff'}} href="tel:+5492254536867">
+                        <h6 className="footer-social-text">Whatsapp</h6>
+                        </a>
                     </button>
                 </div>
 

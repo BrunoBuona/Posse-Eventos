@@ -50,7 +50,6 @@ const deleteDrinks = createAsyncThunk('deleteDrink', async({id, token}) => {
         return {
             id: res.data.data,
             success: res.data.success,
-            message: res.data.message
         }
     } catch (error) {
         let err
