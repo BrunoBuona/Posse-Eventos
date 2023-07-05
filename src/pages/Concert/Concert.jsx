@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { useNavigate, useParams } from "react-router-dom";
-import { faCartShopping, faCalendar, faMapSigns, faMusic } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faCalendar, faMapSigns, faMusic, faGlassMartini } from "@fortawesome/free-solid-svg-icons";
 import { BASE_URL } from "../../api/url";
 import "./Concert.css";
 import { Spinner } from "react-bootstrap";
@@ -40,7 +40,7 @@ export default function Concert() {
       setLoading(false);
     }
   };
-
+  console.log(concert)
   const addToCart = async data => {
     if (online) {
       let headers = { headers: { Authorization: `Bearer ${token}` } };
@@ -93,45 +93,50 @@ export default function Concert() {
               </p>
             </div>
 
-            <div className="d-flex flex-column flex-lg-row justify-content-between">
+            <div className="d-flex flex-column flex-lg-column justify-content-between">
               <div className="d-flex gap-2 align-items-center flex-wrap">
-                <h4 className="text-main fw-bold">{concert.type === "festival" ? "Lineup:" : t("art") + ":"}</h4>
+                <h4 className="text-main fw-bold">Artistas:</h4>
                 {concert.artists.map(artist => (
-                  <Link to={`/artists/${artist._id}`} key={artist._id} className="fs-6 mb-0">
-                    <FontAwesomeIcon icon={faMusic} /> {artist.name}
-                  </Link>
+                    <p> <FontAwesomeIcon icon={faMusic} /> {artist.name}</p> 
                 ))}
               </div>
-              <Button className="mt-2" variant="outline-danger" onClick={() => navigate("/concerts")}>
-                Volver a Eventos
-              </Button>
+              <div className="d-flex gap-2 align-items-center flex-wrap">
+                <h4 className="text-main fw-bold">Bebidas:</h4>
+                {concert?.drinks?.map(drinks => (
+                 <p style={{color:'black',marginBottom:'0px'}}> <FontAwesomeIcon icon={faGlassMartini} /> {drinks} </p>
+                ))}
             </div>
+
+            <Button className="mt-2" style={{ width: '40%' }} variant="outline-danger" onClick={() => navigate("/concerts")}>
+              Volver a Eventos
+            </Button>
           </div>
-          <div className="col-md col-lg-4">
-            <div className="border mb-3 p-2">
-              <h3 className="text-center text-main fw-bold">{t("ticket")}</h3>
-              <div className="d-flex justify-content-between">
-                <p className="text-decoration-underline">{concert.category.name}</p>
-                <p className="fw-semibold">${concert.category.price.toLocaleString()} ARS</p>
-              </div>
-              <Button
-                variant="main"
-                onClick={() => addToCart(concert)}
-                disabled={cart?.items.some(
-                  product => product.categoryName === concert.category.name && product.concertId === concert._id
-                )}
-              >
-                <FontAwesomeIcon icon={faCartShopping} />{" "}
-                {cart?.items.some(
-                  product => product.categoryName === concert.category.name && product.concertId === concert._id
-                )
-                  ? t("added")
-                  : t("add")}
-              </Button>
+        </div>
+        <div className="col-md col-lg-4">
+          <div className="border mb-3 p-2">
+            <h3 className="text-center text-main fw-bold">{t("ticket")}</h3>
+            <div className="d-flex justify-content-between">
+              <p className="text-decoration-underline">{concert.category.name}</p>
+              <p className="fw-semibold">${concert.category.price.toLocaleString()} ARS</p>
             </div>
+            <Button
+              variant="main"
+              onClick={() => addToCart(concert)}
+              disabled={cart?.items.some(
+                product => product.categoryName === concert.category.name && product.concertId === concert._id
+              )}
+            >
+              <FontAwesomeIcon icon={faCartShopping} />{" "}
+              {cart?.items.some(
+                product => product.categoryName === concert.category.name && product.concertId === concert._id
+              )
+                ? t("added")
+                : t("add")}
+            </Button>
           </div>
         </div>
       </div>
+    </div >
     </>
   ) : (
     <h2 className="text-center text-main mt-5">{message}</h2>

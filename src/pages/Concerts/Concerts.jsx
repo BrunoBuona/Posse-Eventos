@@ -35,10 +35,10 @@ const onSearch = e => {
         <div className="d-flex justify-content-between flex-wrap-reverse mb-5">
           <div>
             <select className="Concerts-select border me-5" defaultValue={type} onChange={changeType}>
-              <option value="">— {t('all_type')} —</option>
-              <option value="festival">Previa</option>
-              <option value="fiesta">Fiesta</option>
-              <option value="concert">After</option>
+              <option value="">— Todos los Tipos —</option>
+              <option value="Previa">Previa</option>
+              <option value="Evento">Evento</option>
+              <option value="After">After</option>
             </select>
           </div>
 
