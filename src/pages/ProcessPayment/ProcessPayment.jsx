@@ -8,7 +8,6 @@ import { BASE_URL } from "../../api/url";
 export default function ProcessPayment() {
   let { user, token } = useSelector(store => store.user)
   let userId = user.id
-  let {concertId } = useSelector(store => store.concert)
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [message2, setMessage2] = useState(false);
