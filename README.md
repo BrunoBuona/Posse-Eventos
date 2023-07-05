@@ -1,6 +1,6 @@
 # POSSE 🔖
 
-POSSE es una aplicación web que permite a los usuarios acceder a eventos de Argentina. 
+POSSE is a web application that allows users to access events in Argentina.
 
 Features:
 
