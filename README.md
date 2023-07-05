@@ -1,12 +1,26 @@
-# POSE 🔖
+# POSSE 🔖
 
-POSE es una aplicación web que permite a los usuarios acceder a eventos de todo el mundo, de distintos artistas y/o compositores musicales. Entre sus funcionalidades, permite a los usuarios crear una cuenta personal con la cual pueden adquirir tickets de distintas categorias o reservar sus entradas. Los artistas verificados pueden crear shows y actualizarlos. Los administradores cuentan con un panel de administrador que les permite ver el flujo completo de la web, así como todos los usuarios registrados y un audit log de todos los cambios importantes realizados. Entre muchas otras.
+POSSE is a web application that allows users to access events in Argentina.
 
-# Construido con 🛠️
-* [MongoDB](https://www.mongodb.com/) - Base de datos
-* [Express](https://expressjs.com/es/) - Framework para Backend
-* [React](https://reactjs.org/) - Libreria de Frontend
-* [Node](https://nodejs.org/es/) - Entorno de ejecución para JavaScript 
-* [Redux](https://es.redux.js.org/) - Libreria para manejo del estado
-* [Mongoose](https://mongoosejs.com/) - Framework para modelado de base de datos
-* [CSS](https://developer.mozilla.org/es/docs/Web/CSS) - Lenguaje de estilos
+Features:
+
+- Sign In / Sign Up
+- Controllers to Create, Edit & Delete: Events, Artists, Drinks, Locations.
+- Controllers to Validate: Tickets of Events.
+- Controllers to Change Carrousel Images
+- User Controllers to change their own password.
+- User Controllers to get their Orders.
+- User Profile
+- Landing Page with a Carrousel of Images
+- Events Page with All Available Events
+- MercadoPago Payment Gateway (C1-API)
+  
+
+# Re-Builded with 🛠️ (from Old Project "TicketPass")
+* [MongoDB](https://www.mongodb.com/) 
+* [Express](https://expressjs.com/es/) 
+* [React](https://reactjs.org/) 
+* [Node](https://nodejs.org/es/) 
+* [Redux](https://es.redux.js.org/) 
+* [Mongoose](https://mongoosejs.com/) 
+* [CSS](https://developer.mozilla.org/es/docs/Web/CSS) 
