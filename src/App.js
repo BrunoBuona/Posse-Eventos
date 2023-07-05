@@ -31,8 +31,6 @@ import EditDrink from "./pages/EditDrink/EditDrink";
 import ProcessPayment from "./pages/ProcessPayment/ProcessPayment";
 import NotFound from "./pages/NotFound/NotFound";
 import Profile from "./pages/MyProfile/MyProfile";
-import Chat from "./pages/Chat/Chat";
-import WorkWithUs from "./pages/WorkWithUs/WorkWithUs";
 import DrinksCard from "./pages/Drinks/DrinksCard";
 
 export default function App() {
@@ -85,7 +83,6 @@ let isLoading = async() => {
         <Route path="*" element={<NotFound/>} />
           <Route index element={<Home/>}/>
           <Route path="concerts" element={<Concerts />} />
-          <Route path="about-us" element={<WorkWithUs />} />
           <Route element={<ProtectedRoute isAllowed={!!online} reDirect={'/'}/> }>
             <Route path="cart" element={<Cart />} />
             <Route path="profile" element={<Profile/>} />
@@ -94,7 +91,6 @@ let isLoading = async() => {
           <Route path="artists" element={<Artists/>}/>
           <Route path="artists/:id" element={<ArtistDetail/>}/>
           <Route path="drinks/:id" element={<DrinksCard/>}/>
-          <Route path="chat" element={<Chat />} />
           <Route element={<ProtectedRoute isAllowed={!online} reDirect={'/'}/> }>
             <Route path="signup" element={<SignUp />} />
             <Route path="signin" element={<SignIn />} />
