@@ -13,6 +13,7 @@ const initialValues = {
   banner: "",
   artists: [""],
   venue: "",
+  drinks: [""],
   date: "",
   type: "",
   description: "",
@@ -29,15 +30,18 @@ export default function NewConcert() {
   const [artists, setArtists] = useState([]);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
-
+  const [drinks, setDrinks] = useState([]);
+  let [checked, setChecked] = useState([])
   useEffect(() => {
     const getVenues = () => axios.get(`${BASE_URL}/api/venues`);
     const getArtists = () => axios.get(`${BASE_URL}/api/artists`);
-    Promise.all([getVenues(), getArtists()])
+    const getDrinks = () => axios.get(`${BASE_URL}/api/drink`);
+    Promise.all([getVenues(), getArtists(), getDrinks()])
       .then(results => {
-        let [venuesRes, artistsRes] = results;
+        let [venuesRes, artistsRes, drinksRes] = results;
         setVenues(venuesRes.data.response);
         setArtists(artistsRes.data.data);
+        setDrinks(drinksRes.data.data);
         setLoading(false);
       })
       .catch(error => {
@@ -47,13 +51,21 @@ export default function NewConcert() {
   }, []);
 
   const sendData = async (values, resetForm) => {
+    const selectedDrinks = Object.entries(checked)
+    .filter(([_, isSelected]) => isSelected)
+    .map(([drinkName]) => drinkName);
+
+    const updatedValues = {
+      ...values,
+      drinks: selectedDrinks,
+    };
     const headers = {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     };
     try {
-      let res = await axios.post(`${BASE_URL}/api/concerts`, values, headers);
+      let res = await axios.post(`${BASE_URL}/api/concerts`, updatedValues, headers);
       Swal.fire({
         title: "Success",
         text: res.data.message,
@@ -85,6 +97,13 @@ export default function NewConcert() {
     }
   };
 
+  let checkHandler = (e) => {
+    const drinkName = e.target.value;
+    setChecked((prevChecked) => ({
+      ...prevChecked,
+      [drinkName]: e.target.checked,
+    }));
+  };
   return (
     <div>
       <h1>Nuevo Evento</h1>
@@ -95,8 +114,8 @@ export default function NewConcert() {
       ) : venues.length > 0 && artists.length > 0 ? (
         <Formik
           initialValues={initialValues}
-          onSubmit={(values, { resetForm }) => {
-            sendData(values, resetForm);
+          onSubmit={(updatedValues, { resetForm }) => {
+            sendData(updatedValues, resetForm);
           }}
         >
           {({ values }) => (
@@ -140,7 +159,23 @@ export default function NewConcert() {
                   ))}
                 </Field>
               </div>
-
+              <fieldset>
+                <legend className='fs-6'>Bebidas:</legend>
+                <div className='d-flex align-items-start justify-content-start flex-wrap gap-3'>
+                  {drinks.map((el) => (
+                    <label key={el.name} className='m-1'>
+                      <input
+                        className='me-1'
+                        type='checkbox'
+                        onChange={checkHandler}
+                        value={el.name}
+                        checked={checked[el.name] || false}
+                      />
+                      {el.name}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
               <div className="ms-3">
                 <FieldArray
                   name="artists"

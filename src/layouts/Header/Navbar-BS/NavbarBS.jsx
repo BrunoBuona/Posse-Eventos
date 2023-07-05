@@ -11,6 +11,7 @@ import { useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import userActions from "../../../redux/actions/userActions";
 import { useTranslation } from "react-i18next";
+import logo from './LogoRedesTransp.png'
 
 export default function NavbarBS() {
   let { online, name, photo, token, role } = useSelector(state => state.user)
@@ -70,8 +71,7 @@ export default function NavbarBS() {
             <Container className="nav-flex2" style={{ alignItems: "center", display: "flex" }}>
                 <Link to="/" style={{textDecoration: 'none'}}>
                 <Navbar.Brand style={{ margin: "0" }}>
-                    <img className="navbar-logo pb-2 pe-2" src="../assets/img/logo.png" alt="Logo" />
-                    POSSE
+                    <img className="navbar-logo pb-2 pe-2" style={{width:'100%'}} src={logo} alt="Logo" />
                 </Navbar.Brand>
                 </Link>
                 <Navbar.Toggle ref={togglerRef} aria-controls="responsive-navbar-nav" />
