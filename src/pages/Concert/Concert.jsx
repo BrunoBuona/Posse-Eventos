@@ -97,7 +97,9 @@ export default function Concert() {
               <div className="d-flex gap-2 align-items-center flex-wrap">
                 <h4 className="text-main fw-bold">Artistas:</h4>
                 {concert.artists.map(artist => (
-                    <p> <FontAwesomeIcon icon={faMusic} /> {artist.name}</p> 
+                  <Link to={`/artists/${artist._id}`} key={artist._id} style={{color:'black',marginBottom:'0px'}} className="fs-6 mb-0">
+                    <FontAwesomeIcon icon={faMusic} /> {artist.name}
+                  </Link>
                 ))}
               </div>
               <div className="d-flex gap-2 align-items-center flex-wrap">

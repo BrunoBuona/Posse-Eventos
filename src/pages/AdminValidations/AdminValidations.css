@@ -1,0 +1,40 @@
+.table-btn{
+   background-color: #ffffff; color: black;  border: none;
+   
+}
+.table-btn:hover{
+   color: red;
+}
+.td2{
+    border: 1px solid black;
+}
+.btn-up-table {
+	background-color: #7344f4;
+	border: none;
+	color:#FFFFFF;
+    padding: 7px;
+    margin-bottom: 15px;
+    height: 50%;
+}
+.btn-cover{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-up-table:hover{
+    background-color: #9068ff;
+}
+.search-up-table{
+    width: 180px;
+    background-color: rgb(229, 229, 229);
+    color: black;
+    height: 50%;
+    padding: 5px;
+    text-align: center;
+}
+.btn-search{
+    border: none;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}

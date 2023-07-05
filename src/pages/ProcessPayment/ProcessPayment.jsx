@@ -6,12 +6,12 @@ import { useSearchParams } from "react-router-dom";
 import { BASE_URL } from "../../api/url";
 
 export default function ProcessPayment() {
+  let { user, token } = useSelector(store => store.user)
+  let userId = user.id
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [message2, setMessage2] = useState(false);
   const [searchParams] = useSearchParams();
-  const { token } = useSelector(store => store.user);
-
   useEffect(() => {
     processPayment(); //eslint-disable-next-line
   }, []);
@@ -23,14 +23,12 @@ export default function ProcessPayment() {
       try {
         let headers = {
           headers: {
-            Authorization: `Bearer ${
-              'TEST-605692797055000-062809-8d89f1aa1278d8f90f6cc4f52f171c18-116244102'
-            }`,
+            Authorization: `Bearer ${'TEST-605692797055000-062809-8d89f1aa1278d8f90f6cc4f52f171c18-116244102'
+              }`,
           },
         };
         let resPayment = await axios.get(`https://api.mercadopago.com/v1/payments/${payment_id}`, headers);
         if (resPayment.data.status === "approved") {
-          console.log(resPayment);
           let userHeaders = { headers: { Authorization: `Bearer ${token}` } };
           let res = await axios.post(
             `${BASE_URL}/api/orders/`,
@@ -43,6 +41,14 @@ export default function ProcessPayment() {
             },
             userHeaders
           );
+          let ticketCreate = await axios.post(`${BASE_URL}/api/tickets`, {
+            serialNumber: resPayment.data.order.id,
+            purchaseDate: resPayment.data.date_approved,
+            category: "Basica",
+            userId: "xD",
+            concertId: "xD",
+            redeemed: false
+          })
           setMessage("Tu pago fue aprobado. ¡Gracias por tu compra!");
           setMessage2(true)
         } else {
@@ -62,27 +68,27 @@ export default function ProcessPayment() {
     <div>
       {loading ? (
         <>
-        <h1 className="text-center mt-5 ">Estamos procesando tu pago...</h1>
+          <h1 className="text-center mt-5 ">Estamos procesando tu pago...</h1>
           <div className="d-flex justify-content-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" alt="Loading" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" alt="Loading" />
           </div>
         </>
       ) : (
         <div className="mt-5">
           {message2 ? (
             <>
-              <div className="d-flex justify-content-center" style={{flexDirection:"column", justifyContent:'center',alignItems:'center',marginTop:'20px'}}>
-              <img style={{width:'100px'}} className="mb-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Check_green_circle.svg/2048px-Check_green_circle.svg.png" alt="" />
-              <h3 className="text-center">{message}</h3>
+              <div className="d-flex justify-content-center" style={{ flexDirection: "column", justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+                <img style={{ width: '100px' }} className="mb-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Check_green_circle.svg/2048px-Check_green_circle.svg.png" alt="" />
+                <h3 className="text-center">{message}</h3>
               </div>
             </>
-            ) : (
-              <>
-              <div className="d-flex justify-content-center" style={{flexDirection:"column", justifyContent:'center',alignItems:'center',marginTop:'20px'}}>
-              <img style={{width:'100px'}} className="mb-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Eo_circle_red_letter-x.svg/2048px-Eo_circle_red_letter-x.svg.png" alt="" />
-              <h3 className="text-center">{message}</h3>
+          ) : (
+            <>
+              <div className="d-flex justify-content-center" style={{ flexDirection: "column", justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+                <img style={{ width: '100px' }} className="mb-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Eo_circle_red_letter-x.svg/2048px-Eo_circle_red_letter-x.svg.png" alt="" />
+                <h3 className="text-center">{message}</h3>
               </div>
-              </>)}
+            </>)}
         </div>
       )}
     </div>
