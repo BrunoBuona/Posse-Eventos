@@ -116,9 +116,6 @@ export default function NavbarBS() {
                                             <Link className="nav-btn navDrop" to="profile">
                                                 {t("profile")}
                                             </Link>
-                                            <Link className="nav-btn navDrop" onClick={signOut}>
-                                                {t("log_out")}
-                                            </Link>
                                         </div>
                                     )}
                                 </div>

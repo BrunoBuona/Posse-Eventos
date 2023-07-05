@@ -80,9 +80,6 @@ export default function Form() {
                         </div>
                         <div style={{ display: "flex", alignItems: "center" }}>
                             <div className="bar" style={{ flex: 1, backgroundColor: "rgb(150, 150, 200)", height: "3px" }} />
-
-                            <p style={{ margin: "0 10px" }}>{t("or")}</p>
-
                             <div className="bar" style={{ flex: 1, backgroundColor: "rgb(150, 150, 200)", height: "3px" }} />
                         </div>
                         <div className="form-bodySign pt-3 w-50">
