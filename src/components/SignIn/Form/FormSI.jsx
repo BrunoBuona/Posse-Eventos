@@ -77,14 +77,6 @@ export default function Form() {
                             <div className="form-title-div pt-5 pb-3 text-center">
                                 <h2 className="title2Sign">{t("log")}</h2>
                             </div>
-                            <div className="d-flex flex-column align-items-center gap-3 mt-2">
-                                <h5>{t("log_s")}</h5>
-                                <div className="social-networks">
-                                    <SocialIcon className="icon-social" network="facebook" fgColor="#ffffff" style={{ height: 40, width: 40 }} />
-                                    <SocialIcon className="icon-social" network="instagram" fgColor="#ffffff" style={{ height: 40, width: 40 }} />
-                                    <SocialIcon className="icon-social" network="google" fgColor="#ffffff" style={{ height: 40, width: 40 }} />
-                                </div>
-                            </div>
                         </div>
                         <div style={{ display: "flex", alignItems: "center" }}>
                             <div className="bar" style={{ flex: 1, backgroundColor: "rgb(150, 150, 200)", height: "3px" }} />
