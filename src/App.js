@@ -32,6 +32,7 @@ import ProcessPayment from "./pages/ProcessPayment/ProcessPayment";
 import NotFound from "./pages/NotFound/NotFound";
 import Profile from "./pages/MyProfile/MyProfile";
 import DrinksCard from "./pages/Drinks/DrinksCard";
+import AdminValidations from "./pages/AdminValidations/AdminValidations";
 
 export default function App() {
   const dispatch = useDispatch()
@@ -77,6 +78,7 @@ let isLoading = async() => {
               <Route path="venues" element={<AdminVenues />}/>
               <Route path="venues/new" element={<NewVenue />}/>
               <Route path="venues/edit/:id" element={<EditVenue />}/>
+              <Route path="tickets" element={<AdminValidations />}/>
             </Route>  
         </Route>
         <Route path="/" element={<Main />} >

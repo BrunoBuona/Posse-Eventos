@@ -19,7 +19,7 @@ export default function AdminNav({ isMobile, menuIsOpen }) {
           <AdminButton to="/admin/artists" name="Artistas" />
           <AdminButton to="/admin/drinks" name="Bebidas" />
           <AdminButton to="/admin/venues" name="Localizaciones" />
-          <AdminButton to="/admin/tickets" name="Validar Tickets (Inhabilitado)"/>
+          <AdminButton to="/admin/tickets" name="Validar Tickets"/>
           <div className="mt-auto">
             <AdminButton to="/" name="Volver al sitio web" />
           </div>
