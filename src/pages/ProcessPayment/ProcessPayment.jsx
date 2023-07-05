@@ -8,6 +8,7 @@ import { BASE_URL } from "../../api/url";
 export default function ProcessPayment() {
   let { user, token } = useSelector(store => store.user)
   let userId = user.id
+  let {concertId } = useSelector(store => store.concert)
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [message2, setMessage2] = useState(false);
@@ -15,7 +16,6 @@ export default function ProcessPayment() {
   useEffect(() => {
     processPayment(); //eslint-disable-next-line
   }, []);
-
   const processPayment = async () => {
     let payment_id = searchParams.get("payment_id");
     let status = searchParams.get("status");
@@ -45,8 +45,8 @@ export default function ProcessPayment() {
             serialNumber: resPayment.data.order.id,
             purchaseDate: resPayment.data.date_approved,
             category: "Basica",
-            userId: "xD",
-            concertId: "xD",
+            userId: userId,
+            concertId: "64a4a80be83312efcb0f62c7",
             redeemed: false
           })
           setMessage("Tu pago fue aprobado. ¡Gracias por tu compra!");
