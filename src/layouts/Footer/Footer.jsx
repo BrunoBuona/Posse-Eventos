@@ -19,7 +19,7 @@ function Footer() {
                     </button>
                     <button className="footer-social-btns">
                         <SocialIcon className="icon-social" network="whatsapp" bgColor="#9F00FF" fgColor="#ffffff" style={{ height: 40, width: 40 }} />
-                        <a style={{textDecoration:'none',color:'#ffffff'}} href="tel:+5492254536867">
+                        <a target="_blank" style={{textDecoration:'none',color:'#ffffff'}} href="https://api.whatsapp.com/send?phone=+549%C2%A02254%C2%A053-6867&text=Hola%2C+tengo+una+consulta+¿Podrías+ayudarme%3F+😁">
                         <h6 className="footer-social-text">Whatsapp</h6>
                         </a>
                     </button>

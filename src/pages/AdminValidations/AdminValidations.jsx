@@ -24,7 +24,7 @@ export default function AdminValidations() {
         setMessage(err.response.data.message);
         setError(true);
       });
-  }, []);
+  }, [data]);
 
   useEffect(() => {
     filterData();
@@ -43,6 +43,41 @@ export default function AdminValidations() {
 
   const handleSearch = (searchText) => {
     setSearchText(searchText);
+  };
+
+  function approveTicket(ticket) {
+    const data ={
+      redeemed: true
+    }
+    let id = ticket
+    Swal.fire({
+      title: `¿Validar el Ticket? `,
+      text: "No podrás deshacer esta acción",
+      icon: "warning",
+      showCloseButton: true,
+      showConfirmButton: true,
+      confirmButtonText: "Si",
+      showDenyButton: true,
+})
+.then(result => {
+  if(result.isConfirmed){
+    axios.patch(`${BASE_URL}/api/tickets/${id}`, data)
+      .then(res => {
+        Swal.fire({
+          title: "Operación completada.",
+          text: "Ticket Validado.",
+          icon: "success"
+        })
+      })
+      .catch(err => {
+        Swal.fire({
+          title: "Error",
+          text: err.message,
+          icon: "error",
+        })
+      })
+  }
+})
   };
 
   return (
@@ -77,13 +112,13 @@ export default function AdminValidations() {
             item.redeemed ? null :
               <tbody key={item.serialNumber}>
                 <tr className="tr2">
-                  <td className="td2">{item.serialNumber}</td>
+                <td className="td2">{item.serialNumber}</td>
                   <td className="td2">{item.userId.name + " " + item.userId.lastName}</td>
                   <td className="td2">{item.userId.dni}</td>
                   <td className="td2">{item.concertId.name}</td>
                   <td className="td2">{moment(item.purchaseDate).utcOffset('-03:00').format('YYYY-MM-DD HH:mm:ss')}</td>
                   <td className="td2">NO</td>
-                  <td className="td2"><button className='table-btn'>🗹</button></td>
+                  <td className="td2"><button onClick={() => approveTicket(`${item._id}`)} className='table-btn'>🗹</button></td>
                 </tr>
               </tbody>
           ))}
