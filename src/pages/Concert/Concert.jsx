@@ -97,7 +97,7 @@ export default function Concert() {
               <div className="d-flex gap-2 align-items-center flex-wrap">
                 <h4 className="text-main fw-bold">Artistas:</h4>
                 {concert.artists.map(artist => (
-                  <Link to={`/artists/${artist._id}`} key={artist._id} style={{color:'black',marginBottom:'0px'}} className="fs-6 mb-0">
+                  <Link to={`/artists/${artist._id}`} key={artist._id} style={{ color: 'black', marginBottom: '0px' }} className="fs-6 mb-0">
                     <FontAwesomeIcon icon={faMusic} /> {artist.name}
                   </Link>
                 ))}
@@ -105,40 +105,50 @@ export default function Concert() {
               <div className="d-flex gap-2 align-items-center flex-wrap">
                 <h4 className="text-main fw-bold">Bebidas:</h4>
                 {concert?.drinks?.map(drinks => (
-                 <p style={{color:'black',marginBottom:'0px'}}> <FontAwesomeIcon icon={faGlassMartini} /> {drinks} </p>
+                  <p style={{ color: 'black', marginBottom: '0px' }}> <FontAwesomeIcon icon={faGlassMartini} /> {drinks} </p>
                 ))}
-            </div>
+              </div>
 
-            <Button className="mt-2" style={{ width: '40%' }} variant="outline-danger" onClick={() => navigate("/concerts")}>
-              Volver a Eventos
-            </Button>
-          </div>
-        </div>
-        <div className="col-md col-lg-4">
-          <div className="border mb-3 p-2">
-            <h3 className="text-center text-main fw-bold">{t("ticket")}</h3>
-            <div className="d-flex justify-content-between">
-              <p className="text-decoration-underline">{concert.category.name}</p>
-              <p className="fw-semibold">${concert.category.price.toLocaleString()} ARS</p>
+              <Button className="mt-2" style={{ width: '40%' }} variant="outline-danger" onClick={() => navigate("/concerts")}>
+                Volver a Eventos
+              </Button>
             </div>
-            <Button
-              variant="main"
-              onClick={() => addToCart(concert)}
-              disabled={cart?.items.some(
-                product => product.categoryName === concert.category.name && product.concertId === concert._id
-              )}
-            >
-              <FontAwesomeIcon icon={faCartShopping} />{" "}
-              {cart?.items.some(
-                product => product.categoryName === concert.category.name && product.concertId === concert._id
-              )
-                ? t("added")
-                : t("add")}
-            </Button>
+          </div>
+          <div className="col-md col-lg-4">
+            <div className="border mb-3 p-2">
+              <h3 className="text-center text-main fw-bold">{t("ticket")}</h3>
+              <div className="d-flex justify-content-between">
+                <p className="text-decoration-underline">{concert.category.name}</p>
+                <p className="fw-semibold">${concert.category.price.toLocaleString()} ARS</p>
+              </div>
+              <Button
+                variant="main"
+                onClick={() => addToCart(concert)}
+                disabled={cart?.items.some(
+                  product => product.categoryName === concert.category.name && product.concertId === concert._id
+                )}
+              >
+                <FontAwesomeIcon icon={faCartShopping} />{" "}
+                {cart?.items.some(
+                  product => product.categoryName === concert.category.name && product.concertId === concert._id
+                )
+                  ? t("added")
+                  : t("add")}
+              </Button>
+            </div>
+            <div className="d-flex gap-2 align-items-center flex-wrap">
+              <iframe
+                title="Google Map"
+                width="100%"
+                height="300"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.5997581272795!2d-56.9700542234357!3d-37.25720261050369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959b6060010c6253%3A0xc7fbbf619cb0030!2sP.%C2%BA%20104%20105%2C%20Villa%20Gesell%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1688602047411!5m2!1ses!2sar"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
-      </div>
-    </div >
+      </div >
     </>
   ) : (
     <h2 className="text-center text-main mt-5">{message}</h2>
