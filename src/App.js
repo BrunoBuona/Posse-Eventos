@@ -43,8 +43,28 @@ export default function App() {
 
   useEffect(() => {
     isLoading()
-      // eslint-disable-next-line
-  }, [])  
+    const handleContextMenuAndKeyDown = (event) => {
+      if (event.type === 'contextmenu' || event.ctrlKey) {
+        event.preventDefault();
+      }
+    };
+  
+    const handleKeyPress = (event) => {
+      if (event.keyCode === 123) {
+        event.preventDefault();
+      }
+    };
+  
+    document.addEventListener('contextmenu', handleContextMenuAndKeyDown);
+    document.addEventListener('keydown', handleContextMenuAndKeyDown);
+    document.addEventListener('keypress', handleKeyPress);
+  
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenuAndKeyDown);
+      document.removeEventListener('keydown', handleContextMenuAndKeyDown);
+      document.removeEventListener('keypress', handleKeyPress);
+    };
+  }, []);
 
 let isLoading = async() => {
   const token = JSON.parse(localStorage.getItem("token"))
