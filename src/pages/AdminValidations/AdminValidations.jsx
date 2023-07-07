@@ -35,7 +35,7 @@ export default function AdminValidations() {
       setFilteredData(data);
     } else {
       const filteredData = data.filter(item =>
-        item.serialNumber.includes(searchText)
+        item.serialNumber.filter(searchText)
       );
       setFilteredData(filteredData);
     }
