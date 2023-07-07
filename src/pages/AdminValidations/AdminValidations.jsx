@@ -30,16 +30,16 @@ export default function AdminValidations() {
     filterData();
   }, [searchText]);
 
-  const filterData = () => {
-    if (searchText.trim() === "") {
-      setFilteredData(data);
-    } else {
-      const filteredData = data.filter(item =>
-        item.serialNumber.filter(searchText)
-      );
-      setFilteredData(filteredData);
-    }
-  };
+ const filterData = () => {
+  if (searchText.trim() === "") {
+    setFilteredData(data);
+  } else {
+    const filteredData = data.filter(item =>
+      item.serialNumber.indexOf(searchText) !== -1
+    );
+    setFilteredData(filteredData);
+  }
+};
 
   const handleSearch = (searchText) => {
     setSearchText(searchText);
