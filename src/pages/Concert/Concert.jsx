@@ -141,7 +141,7 @@ export default function Concert() {
                 title="Google Map"
                 width="100%"
                 height="300"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.5997581272795!2d-56.9700542234357!3d-37.25720261050369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959b6060010c6253%3A0xc7fbbf619cb0030!2sP.%C2%BA%20104%20105%2C%20Villa%20Gesell%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1688602047411!5m2!1ses!2sar"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3175.6105553069615!2d-56.96858971757027!3d-37.256946490812034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1688700804511!5m2!1ses!2sar"
                 frameborder="0"
                 allowfullscreen
               ></iframe>
