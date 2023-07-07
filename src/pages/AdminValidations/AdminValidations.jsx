@@ -14,32 +14,32 @@ export default function AdminValidations() {
   const [data, setData] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+
   useEffect(() => {
     axios.get(`${BASE_URL}/api/tickets`)
       .then(res => {
         setData(res.data.data);
-        setFilteredData(res.data.data);
       })
       .catch(err => {
         setMessage(err.response.data.message);
         setError(true);
       });
-  }, [data]);
+  }, []);
 
   useEffect(() => {
     filterData();
-  }, [searchText]);
+  }, [searchText, data]);
 
- const filterData = () => {
-  if (searchText.trim() === "") {
-    setFilteredData(data);
-  } else {
-    const filteredData = data.filter(item =>
-      item.serialNumber.indexOf(searchText) !== -1
-    );
-    setFilteredData(filteredData);
-  }
-};
+  const filterData = () => {
+    if (searchText.trim() === "") {
+      setFilteredData(data);
+    } else {
+      const filteredData = data.filter(item =>
+        item.serialNumber.includes(searchText)
+      );
+      setFilteredData(filteredData);
+    }
+  };
 
   const handleSearch = (searchText) => {
     setSearchText(searchText);
