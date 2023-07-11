@@ -100,7 +100,7 @@ export default function EditVenue() {
               </div>
               <div>
               <label htmlFor="urlLocation">URL de la Dirección:</label>
-              <input name="urlLocation" placeholder="Lo que esta entre comillas en href=''" value={values.urlLocation} />
+              <input name="urlLocation" placeholder="Lo que esta entre comillas en href=''" value={values.urlLocation} ref={inputRef} />
               <button onClick={pasteClipboardContent}>Pegar</button>
             </div>
               <div>
