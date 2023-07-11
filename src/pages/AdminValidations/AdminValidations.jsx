@@ -14,21 +14,21 @@ export default function AdminValidations() {
   const [data, setData] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+
   useEffect(() => {
     axios.get(`${BASE_URL}/api/tickets`)
       .then(res => {
         setData(res.data.data);
-        setFilteredData(res.data.data);
       })
       .catch(err => {
         setMessage(err.response.data.message);
         setError(true);
       });
-  }, [data]);
+  }, []);
 
   useEffect(() => {
     filterData();
-  }, [searchText]);
+  }, [searchText, data]);
 
   const filterData = () => {
     if (searchText.trim() === "") {
