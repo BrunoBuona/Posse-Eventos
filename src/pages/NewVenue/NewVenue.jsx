@@ -87,7 +87,7 @@ export default function NewVenue() {
             </div>
             <div>
               <label htmlFor="urlLocation">URL de Dirección:</label>
-              <Field type="text" id="urlLocation" placeholder="Lo que esta entre comillas en href=''" ref={inputRef} />
+              <input type="text" id="urlLocation" placeholder="Lo que esta entre comillas en href=''" ref={inputRef} />
               <button onClick={ClipboardInput}>Pegar</button>
             </div>
             <div>
