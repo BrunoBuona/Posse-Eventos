@@ -6,6 +6,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
+import { useRef } from "react";
 
 export default function EditVenue() {
   const { id } = useParams();
@@ -66,12 +67,13 @@ export default function EditVenue() {
       }
     }
   };
-  function ClipboardInput() {
-    const inputRef = useRef(null);
-      navigator.clipboard.readText().then((text) => {
-        inputRef.current.value = text;
-      });
-    }
+  const inputRef = useRef(null);
+
+  const pasteClipboardContent = () => {
+    navigator.clipboard.readText().then((text) => {
+      inputRef.current.value = text;
+    });
+  };
   return (
     <div>
       <h1>Editar Localización</h1>
@@ -99,7 +101,7 @@ export default function EditVenue() {
               <div>
               <label htmlFor="urlLocation">URL de la Dirección:</label>
               <input name="urlLocation" placeholder="Lo que esta entre comillas en href=''" value={values.urlLocation} />
-              <button onClick={ClipboardInput}>Pegar</button>
+              <button onClick={pasteClipboardContent}>Pegar</button>
             </div>
               <div>
                 <label htmlFor="capacity">Capacidad de la Localización:</label>

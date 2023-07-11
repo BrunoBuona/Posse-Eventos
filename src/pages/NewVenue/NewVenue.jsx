@@ -6,7 +6,7 @@ import axios from "axios";
 import "./NewVenue.css";
 import Swal from "sweetalert2";
 import { useSelector } from "react-redux";
-
+import { useRef } from "react";
 const initialValues = {
   name: "",
   address: "",
@@ -59,12 +59,13 @@ export default function NewVenue() {
     }
   };
 
-  function ClipboardInput() {
-    const inputRef = useRef(null);
-      navigator.clipboard.readText().then((text) => {
-        inputRef.current.value = text;
-      });
-    }
+  const inputRef = useRef(null);
+
+  const pasteClipboardContent = () => {
+    navigator.clipboard.readText().then((text) => {
+      inputRef.current.value = text;
+    });
+  };
   
   return (
     <div>
@@ -88,7 +89,7 @@ export default function NewVenue() {
             <div>
               <label htmlFor="urlLocation">URL de Dirección:</label>
               <input type="text" id="urlLocation" placeholder="Lo que esta entre comillas en href=''" ref={inputRef} />
-              <button onClick={ClipboardInput}>Pegar</button>
+              <button onClick={pasteClipboardContent}>Pegar</button>
             </div>
             <div>
               <label htmlFor="capacity">Capacidad del Lugar:</label>
