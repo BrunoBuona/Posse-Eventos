@@ -14,6 +14,7 @@ const initialValues = {
   type: "",
   country: "",
   city: "",
+  urlLocation: "",
 };
 
 export default function NewVenue() {
@@ -76,6 +77,10 @@ export default function NewVenue() {
             <div>
               <label htmlFor="address">Dirección:</label>
               <Field name="address" placeholder="Ruta 11 - KM 2" />
+            </div>
+            <div>
+              <label htmlFor="address">URL de Dirección:</label>
+              <Field name="address" placeholder="Lo que esta entre comillas en href=''" />
             </div>
             <div>
               <label htmlFor="capacity">Capacidad del Lugar:</label>

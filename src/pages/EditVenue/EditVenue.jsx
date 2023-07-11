@@ -92,6 +92,10 @@ export default function EditVenue() {
                 <Field name="address" placeholder="KM 11 - 22" value={values.address} />
               </div>
               <div>
+              <label htmlFor="address">URL de la Dirección:</label>
+              <Field name="address" placeholder="Lo que esta entre comillas en href=''" value={values.urlLocation} />
+            </div>
+              <div>
                 <label htmlFor="capacity">Capacidad de la Localización:</label>
                 <Field name="capacity" placeholder="258" type="number" value={values.capacity} />
               </div>
