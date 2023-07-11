@@ -30,20 +30,19 @@ export default function Cart() {
 
   function clearCart() {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "¿Estas segurx?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#d33",
       cancelButtonColor: "#3085d6",
-      confirmButtonText: "Yes, clear cart!",
+      confirmButtonText: "Si, limpiar carrito.",
     }).then(result => {
       if (result.isConfirmed) {
         let headers = { headers: { Authorization: `Bearer ${token}` } };
         dispatch(emptyCart({ cartId: cart._id, headers }))
           .then(res => {
             if (res.payload.success) {
-              Swal.fire("Deleted!", "Your cart has been cleared.", "success");
+              Swal.fire("Deleted!", "Tu carrito fue reiniciado..", "success");
             } else {
               Swal.fire("Error", res.payload.message, "error");
             }
