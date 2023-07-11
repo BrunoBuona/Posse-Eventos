@@ -88,8 +88,8 @@ export default function EditVenue() {
                 <Field name="name" placeholder="Rancho de la V" value={values.name} />
               </div>
               <div>
-                <label htmlFor="address">Dirección de la Localización:</label>
-                <Field name="address" placeholder="KM 11 - 22" value={values.address} />
+                <label htmlFor="urlAddress">Dirección de la Localización:</label>
+                <Field name="urlAddress" placeholder="KM 11 - 22" value={values.address} />
               </div>
               <div>
               <label htmlFor="address">URL de la Dirección:</label>
