@@ -27,11 +27,11 @@ export default function Form() {
         }
         try {
             let res = await axios.post(`${BASE_URL}/api/auth/sign-up`, userValue)
-            if (res.response.data.success) {
+            if (res || res.status === 201) {
                 Swal.fire({
                     icon: 'success',
-                    title: t('alert_create'),
-                    text: t('alert_verify'),
+                    title: '¡Genial!',
+                    text: "¡Te registraste correctamente!",
                 })
                 formRef.current.reset()
             }
