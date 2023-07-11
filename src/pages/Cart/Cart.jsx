@@ -87,11 +87,6 @@ export default function Cart() {
         <button style={{ width: "200px" }} className="btn btn-danger mx-3" onClick={clearCart}>
           {t("cart_emp")}
         </button>
-        <Navlink to="/">
-          <button style={{ width: "200px" }} className="btn btn-primary mx-3">
-            {t("cart_ke")}
-          </button>
-        </Navlink>
         <button style={{ width: "200px" }} className="btn btn-success mx-3" onClick={goToPayment}>
           {t("pay")}
         </button>
