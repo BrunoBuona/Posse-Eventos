@@ -34,8 +34,8 @@
     box-shadow: 4px 4px 4px black;
 }
 .module2-cards-image{
-    width: 145.5px;
-    height: 145.5px;
+    max-width: 100%;
+    max-height: 100%;  
 }
 .module2-cards-overlay{
     display: flex;

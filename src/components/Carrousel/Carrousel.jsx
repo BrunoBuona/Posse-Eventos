@@ -24,14 +24,10 @@ export default function Carrousel() {
 
     return (
         <div className='background' style={{ backgroundImage: `${img[position]}` }}>
-            <div className='circles'>
+            <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                <img style={{maxWidth:'50%',marginTop:'40vh'}} src="https://i.ibb.co/XtxMfth/Slogan-Transp-1.png" alt="" />
                 {
                     img.map((item, index) => {
-                        return (
-                        
-                            <>
-                                </>
-                        )
                     })
                 }
             </div>

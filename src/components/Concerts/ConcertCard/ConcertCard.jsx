@@ -10,13 +10,14 @@ export default function ConcertCard({ concert }) {
   return (
     <Card
       className="Concert-card border-0 h-100"
+      style={{textAlign:'center'}}
       onMouseOver={() => { imgRef.current.classList.add('opacity-25'); textRef.current.classList.remove('hidden') }}
       onMouseLeave={() => { imgRef.current.classList.remove('opacity-25'); textRef.current.classList.add('hidden') }}
     >
       <Link to={`/concerts/${concert._id}`} className="stretched-link">
         <div className="Concert-card-imageContainer d-flex justify-content-center align-items-center">
           <Card.Text ref={textRef} className='card__text hidden'>Ver detalles +</Card.Text>
-          <Card.Img ref={imgRef} className='Concert-card-image fluid' variant="top" src={concert.photo} />
+          <Card.Img ref={imgRef} style={{maxWidth:'100%',maxHeight:'100%'}} className='Concert-card-image fluid' variant="top" src={concert.photo} />
         </div>
       </Link>
       <Card.Body>
