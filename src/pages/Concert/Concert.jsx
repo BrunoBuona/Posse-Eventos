@@ -94,6 +94,7 @@ export default function Concert() {
             </div>
 
             <div className="d-flex flex-column flex-lg-column justify-content-between">
+                { concert.artists.length > 0 ? (
               <div className="d-flex gap-2 align-items-center flex-wrap">
                 <h4 className="text-main fw-bold">Artistas:</h4>
                 {concert.artists.map(artist => (
@@ -102,13 +103,15 @@ export default function Concert() {
                   </Link>
                 ))}
               </div>
+            ) : null }
+            { concert.drinks.length > 0 ? (
               <div className="d-flex gap-2 align-items-center flex-wrap">
                 <h4 className="text-main fw-bold">Bebidas:</h4>
                 {concert?.drinks?.map(drinks => (
                   <p style={{ color: 'black', marginBottom: '0px' }}> <FontAwesomeIcon icon={faGlassMartini} /> {drinks} </p>
                 ))}
               </div>
-
+            ) : null }
               <Button className="mt-2" style={{ width: '40%' }} variant="outline-danger" onClick={() => navigate("/concerts")}>
                 Volver a Eventos
               </Button>
@@ -141,7 +144,7 @@ export default function Concert() {
                 title="Google Map"
                 width="100%"
                 height="300"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3175.610554919628!2d-56.9685897!3d-37.2569465!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959b608acc16e8e5%3A0x8676e71739f6819f!2sSutton%20212!5e0!3m2!1ses!2sar!4v1688701240430!5m2!1ses!2sar"
+                src={concert.venue.urlLocation}
                 frameborder="0"
                 allowfullscreen
               ></iframe>

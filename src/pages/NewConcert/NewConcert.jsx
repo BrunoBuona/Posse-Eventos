@@ -134,7 +134,7 @@ export default function NewConcert() {
               </div>
               <div>
                 <label htmlFor="date">Fecha del Evento:</label>
-                <Field name="date" type="date-time" />
+                <Field name="date" type="datetime-local" />
               </div>
               <div>
                 <label htmlFor="type">Tipo de Evento:</label>
