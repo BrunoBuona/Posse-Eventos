@@ -49,11 +49,11 @@ export default function App() {
       }
     };
   
-    const handleKeyPress = (event) => {
-      if (event.keyCode === 123) {
-        event.preventDefault();
-      }
-    };
+    // const handleKeyPress = (event) => {
+    //   if (event.keyCode === 123) {
+    //     event.preventDefault();
+    //   }
+    // };
   
     const handleKeyDown = (event) => {
       if (event.keyCode === 123) {
@@ -63,13 +63,13 @@ export default function App() {
   
     document.addEventListener('contextmenu', handleContextMenuAndKeyDown);
     document.addEventListener('keydown', handleContextMenuAndKeyDown);
-    document.addEventListener('keypress', handleKeyPress);
+    // document.addEventListener('keypress', handleKeyPress);
     document.addEventListener('keydown', handleKeyDown);
   
     return () => {
       document.removeEventListener('contextmenu', handleContextMenuAndKeyDown);
       document.removeEventListener('keydown', handleContextMenuAndKeyDown);
-      document.removeEventListener('keypress', handleKeyPress);
+      // document.removeEventListener('keypress', handleKeyPress);
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
