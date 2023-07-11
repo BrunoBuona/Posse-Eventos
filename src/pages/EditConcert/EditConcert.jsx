@@ -29,8 +29,9 @@ export default function EditConcert() {
       .then(results => {
         let [concertRes, venuesRes, artistsRes, drinksRes] = results;
         let { date, venue, artists } = concertRes.data.response;
-        const offset = new Date(concertRes.data.response.date).getTimezoneOffset();
-        date = new Date(concertRes.data.response.date).getTime() - offset * 1000 * 60;
+        const offset = 3 * 60; // 3 horas en minutos
+        const concertDate = new Date(concertRes.data.response.date);
+        const adjustedDate = new Date(concertDate.getTime() + offset * 1000 * 60);
         concertRes.data.response.date = new Date(date).toISOString().slice(0, 16);
         concertRes.data.response.venue = venue._id;
         concertRes.data.response.artists = artists.map(artist => artist._id);
