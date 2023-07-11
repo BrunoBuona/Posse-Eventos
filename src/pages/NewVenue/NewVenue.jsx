@@ -61,7 +61,8 @@ export default function NewVenue() {
 
   const inputRef = useRef(null);
 
-  const pasteClipboardContent = () => {
+  const pasteClipboardContent = (event) => {
+    event.preventDefault();
     navigator.clipboard.readText().then((text) => {
       inputRef.current.value = text;
     });
