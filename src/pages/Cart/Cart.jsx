@@ -88,7 +88,7 @@ export default function Cart() {
           {"Limpiar carrito"}
         </button>
         <button style={{ width: "200px" }} className="btn btn-success mx-3" onClick={goToPayment}>
-          {t("pay")}
+          {"Pagar (MercadoPago)"}
         </button>
       </div>
     </>
