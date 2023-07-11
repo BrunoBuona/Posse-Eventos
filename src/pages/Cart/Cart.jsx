@@ -22,7 +22,7 @@ export default function Cart() {
       let headers = { headers: { Authorization: `Bearer ${token}` } };
       let res = await axios.get(`${BASE_URL}/api/carts/pay`, headers);
       let response = res.data.response;
-      window.location.href = response.sandbox_init_point;
+      window.location.href = response.init_point;
     } catch (error) {
       console.log(error);
     }
