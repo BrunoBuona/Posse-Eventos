@@ -102,7 +102,6 @@ export default function EditVenue() {
               <div>
               <label htmlFor="urlLocation">URL de la Dirección:</label>
               <input name="urlLocation" placeholder="Lo que esta entre comillas en href=''" value={values.urlLocation} ref={inputRef} />
-              <button  type="button"  onClick={pasteClipboardContent}><img style={{width:'30px',height:'30px'}} src="https://freepngimg.com/download/clipboard/177922-checklist-clipboard-png-download-free.png" alt="Clipboard paste" /></button>
             </div>
               <div>
                 <label htmlFor="capacity">Capacidad de la Localización:</label>

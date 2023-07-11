@@ -90,7 +90,6 @@ export default function NewVenue() {
             <div>
               <label htmlFor="urlLocation">URL de Dirección:</label>
               <input type="text" id="urlLocation" placeholder="Lo que esta entre comillas en href=''" ref={inputRef} />
-              <button  type="button"  onClick={pasteClipboardContent}><img style={{width:'30px',height:'30px'}} src="https://freepngimg.com/download/clipboard/177922-checklist-clipboard-png-download-free.png" alt="Clipboard paste" /></button>
             </div>
             <div>
               <label htmlFor="capacity">Capacidad del Lugar:</label>
