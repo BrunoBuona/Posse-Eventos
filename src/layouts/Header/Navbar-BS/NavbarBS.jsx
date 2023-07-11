@@ -80,6 +80,9 @@ export default function NavbarBS() {
                         <Link className="nav-btn" to="/">
                             {t("home")}
                         </Link>
+                        <Link className="nav-btn" to="/artists">
+                            {t("Artistas")}
+                        </Link>
                         <Link className="nav-btn" to="/concerts">
                             {t("Eventos")}
                         </Link>
