@@ -66,7 +66,12 @@ export default function EditVenue() {
       }
     }
   };
-
+  function ClipboardInput() {
+    const inputRef = useRef(null);
+      navigator.clipboard.readText().then((text) => {
+        inputRef.current.value = text;
+      });
+    }
   return (
     <div>
       <h1>Editar Localización</h1>
@@ -94,6 +99,7 @@ export default function EditVenue() {
               <div>
               <label htmlFor="urlLocation">URL de la Dirección:</label>
               <Field name="urlLocation" placeholder="Lo que esta entre comillas en href=''" value={values.urlLocation} />
+              <button onClick={ClipboardInput}>Pegar</button>
             </div>
               <div>
                 <label htmlFor="capacity">Capacidad de la Localización:</label>

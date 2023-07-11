@@ -1,6 +1,6 @@
 import React from "react";
 import { Field, Form, Formik } from "formik";
-import { Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { BASE_URL } from "../../api/url";
 import axios from "axios";
 import "./NewVenue.css";
@@ -59,6 +59,13 @@ export default function NewVenue() {
     }
   };
 
+  function ClipboardInput() {
+    const inputRef = useRef(null);
+      navigator.clipboard.readText().then((text) => {
+        inputRef.current.value = text;
+      });
+    }
+  
   return (
     <div>
       <h1>Nueva Localización</h1>
@@ -80,7 +87,8 @@ export default function NewVenue() {
             </div>
             <div>
               <label htmlFor="urlLocation">URL de Dirección:</label>
-              <Field name="urlLocation" placeholder="Lo que esta entre comillas en href=''" />
+              <Field type="text" id="urlLocation" placeholder="Lo que esta entre comillas en href=''" ref={inputRef} />
+              <button onClick={ClipboardInput}>Pegar</button>
             </div>
             <div>
               <label htmlFor="capacity">Capacidad del Lugar:</label>
