@@ -79,8 +79,8 @@ export default function NewVenue() {
               <Field name="address" placeholder="Ruta 11 - KM 2" />
             </div>
             <div>
-              <label htmlFor="address">URL de Dirección:</label>
-              <Field name="address" placeholder="Lo que esta entre comillas en href=''" />
+              <label htmlFor="urladdress">URL de Dirección:</label>
+              <Field name="urladdress" placeholder="Lo que esta entre comillas en href=''" />
             </div>
             <div>
               <label htmlFor="capacity">Capacidad del Lugar:</label>
