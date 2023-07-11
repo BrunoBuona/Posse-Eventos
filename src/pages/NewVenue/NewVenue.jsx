@@ -90,7 +90,7 @@ export default function NewVenue() {
             <div>
               <label htmlFor="urlLocation">URL de Dirección:</label>
               <input type="text" id="urlLocation" placeholder="Lo que esta entre comillas en href=''" ref={inputRef} />
-              <button onClick={pasteClipboardContent}>Pegar</button>
+              <button  type="button"  onClick={pasteClipboardContent}>Pegar</button>
             </div>
             <div>
               <label htmlFor="capacity">Capacidad del Lugar:</label>
