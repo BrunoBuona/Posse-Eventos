@@ -4,6 +4,7 @@ import { Spinner } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { BASE_URL } from "../../api/url";
+import { MPAT_23AB } from "../../api/url";
 
 export default function ProcessPayment() {
   let { user, token } = useSelector(store => store.user)
@@ -26,7 +27,7 @@ export default function ProcessPayment() {
               }`,
           },
         };
-        let resPayment = await axios.get(`https://api.mercadopago.com/v1/payments/${payment_id}`, headers);
+        let resPayment = await axios.get(`https://api.mercadopago.com/v1/payments/${payment_id}?access_token=${MPAT_23AB}`, headers);
         if (resPayment.data.status === "approved") {
           let userHeaders = { headers: { Authorization: `Bearer ${token}` } };
           let res = await axios.post(
